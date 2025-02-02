@@ -2,7 +2,19 @@
 
 import { useDarkMode } from "@/components/DarkModeContext";
 import { useState, useEffect } from "react";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
+// Importer le module sans typage
+import { DarkModeSwitch as DarkModeSwitchRaw } from "react-toggle-dark-mode";
+
+// Déclarer le type explicite pour DarkModeSwitch
+type DarkModeSwitchProps = {
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  size: number;
+  moonColor: string;
+  sunColor: string;
+};
+
+const DarkModeSwitch = DarkModeSwitchRaw as React.FC<DarkModeSwitchProps>;
 
 export default function DarkModeToggle() {
   const { darkMode, setDarkMode } = useDarkMode();
