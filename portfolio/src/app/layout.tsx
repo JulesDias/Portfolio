@@ -4,7 +4,6 @@ import "../styles/globals.css";
 import { DarkModeProvider } from "@/components/DarkModeContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MantineProvider } from '@mantine/core';
 
 
 const geistSans = Geist({
