@@ -60,7 +60,7 @@ export default function Home() {
 
             {/* Bandeau avec texte en Parallax */}
             <Parallax speed={-15}>
-              <div className="w-screen h-96 bg-gray-300 dark:bg-gray-700 flex items-center justify-between px-4 sm:px-10 md:px-20">
+              <div className="w-screen h-96 bg-gray-300 dark:bg-gray-700 bg-opacity-50 dark:bg-opacity-50 flex items-center justify-between px-4 sm:px-10 md:px-20 backdrop-blur-md">
               <p
                 className={`text-left text-base sm:text-lg md:text-xl ${
                 isDarkMode ? "text-gray-100" : "text-gray-900"
@@ -95,33 +95,26 @@ export default function Home() {
 }
 
 // 🎨 Contenu des cartes du carousel
-const DummyContent = () => {
+const DummyContent = ({ src }: { src: string }) => {
   return (
-    <>
-      {[...new Array(3).fill(1)].map((_, index) => {
-        return (
-          <div
-            key={"dummy-content" + index}
-            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
-          >
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-              <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                Chaque projet est une nouvelle aventure créative.
-              </span>{" "}
-              Mon approche du design repose sur l'innovation, la précision et
-              l'émotion.
-            </p>
-            <Image
-              src="https://assets.aceternity.com/macbook.png"
-              alt="Macbook mockup"
-              height="500"
-              width="500"
-              className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-            />
-          </div>
-        );
-      })}
-    </>
+    <div
+      className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+    >
+      <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+        <span className="font-bold text-neutral-700 dark:text-neutral-200">
+          Chaque projet est une nouvelle aventure créative.
+        </span>{" "}
+        Mon approche du design repose sur l'innovation, la précision et
+        l'émotion.
+      </p>
+      <Image
+        src={src}
+        alt="Project image"
+        height="500"
+        width="500"
+        className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+      />
+    </div>
   );
 };
 
@@ -130,36 +123,36 @@ const data = [
     category: "Web Design",
     title: "Création d'expériences interactives.",
     src: "/photo.jpg",
-    content: <DummyContent />,
+    content: <DummyContent src="/photo.jpg" />,
   },
   {
     category: "Typographie",
     title: "L'identité visuelle au service de l'émotion.",
     src: "/Draco.jpg",
-    content: <DummyContent />,
+    content: <DummyContent src="/Draco.jpg" />,
   },
   {
     category: "UX/UI",
     title: "L'expérience utilisateur avant tout.",
     src: "/chambre.jpg",
-    content: <DummyContent />,
+    content: <DummyContent src="/chambre.jpg" />,
   },
   {
     category: "Illustration",
     title: "Donner vie aux idées avec le digital.",
     src: "/espace.jpg",
-    content: <DummyContent />,
+    content: <DummyContent src="/espace.jpg" />,
   },
   {
     category: "Motion Design",
     title: "Quand l'animation sublime le message.",
     src: "/barquette.jpg",
-    content: <DummyContent />,
+    content: <DummyContent src="/barquette.jpg" />,
   },
   {
     category: "Créativité",
     title: "Un regard unique sur chaque projet.",
     src: "/couleur.jpg",
-    content: <DummyContent />,
+    content: <DummyContent src="/couleur.jpg" />,
   },
 ];
