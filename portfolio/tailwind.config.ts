@@ -1,3 +1,4 @@
+import { Montserrat } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -12,6 +13,14 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'DarkGreenCustom': '#ACBD83',
+        'greenCustom': '#c1cd88',
+        'OtherGreenCustom': '#dfe4c8'
+      },
+      fontFamily: {
+        kiera: ["Kiera", "sans-serif"],
+        Cinematografica: ["Cinematografica", "sans-serif"],
+        Montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },

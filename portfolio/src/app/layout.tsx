@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
-import { DarkModeProvider } from "@/components/DarkModeContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
+import ClientParallaxWrapper from "@/components/ClientParallaxWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,18 +20,16 @@ export const metadata: Metadata = {
   description: "Portfolio de Ludivine Rameaux, designer.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="fr">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <DarkModeProvider>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </DarkModeProvider>
-      </body>
-    </html>
-  );
-}
+const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <html lang="fr">
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <ClientParallaxWrapper>
+        <Header />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+      </ClientParallaxWrapper>
+    </body>
+  </html>
+);
+
+export default RootLayout;

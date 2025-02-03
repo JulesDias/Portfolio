@@ -14,7 +14,7 @@ import {
 
 function BentoGridDemo() {
   return (
-    <BentoGrid className="max-w-full mx-auto  bg-gray-200 dark:bg-neutral-900 p-10">
+    <BentoGrid className="max-w-full mx-auto  bg-white p-10">
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -22,14 +22,13 @@ function BentoGridDemo() {
           description={item.description}
           header={item.header}
           icon={item.icon}
-          className={i === 3 || i === 6 || i === 8 ? "md:col-span-2" : ""}
         />
       ))}
     </BentoGrid>
   );
 }
 const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-100 to-neutral-50 dark:from-neutral-800 dark:to-neutral-700"></div>
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 to-neutral-50 "></div>
 );
 const items = [
   {
@@ -37,7 +36,7 @@ const items = [
     description: "Explore the birth of groundbreaking ideas and inventions.",
     header: <Skeleton />,
     icon: (
-      <IconClipboardCopy className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
+      <IconClipboardCopy className="h-4 w-4 text-neutral-500" />
     ),
   },
   {
@@ -45,7 +44,7 @@ const items = [
     description: "Dive into the transformative power of technology.",
     header: <Skeleton />,
     icon: (
-      <IconFileBroken className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
+      <IconFileBroken className="h-4 w-4 text-neutral-500" />
     ),
   },
   {
@@ -53,7 +52,7 @@ const items = [
     description: "Discover the beauty of thoughtful and functional design.",
     header: <Skeleton />,
     icon: (
-      <IconSignature className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
+      <IconSignature className="h-4 w-4 text-neutral-500" />
     ),
   },
   {
@@ -62,7 +61,7 @@ const items = [
       "Understand the impact of effective communication in our lives.",
     header: <Skeleton />,
     icon: (
-      <IconTableColumn className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
+      <IconTableColumn className="h-4 w-4 text-neutral-500 " />
     ),
   },
   {
@@ -70,7 +69,7 @@ const items = [
     description: "Join the quest for understanding and enlightenment.",
     header: <Skeleton />,
     icon: (
-      <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
+      <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500 " />
     ),
   },
   {
@@ -78,7 +77,7 @@ const items = [
     description: "Experience the thrill of bringing ideas to life.",
     header: <Skeleton />,
     icon: (
-      <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
+      <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500 " />
     ),
   },
   {
@@ -86,7 +85,7 @@ const items = [
     description: "Embark on exciting journeys and thrilling discoveries.",
     header: <Skeleton />,
     icon: (
-      <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
+      <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500 " />
     ),
   },
   {
@@ -95,7 +94,7 @@ const items = [
       "Understand the impact of effective communication in our lives.",
     header: <Skeleton />,
     icon: (
-      <IconTableColumn className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
+      <IconTableColumn className="h-4 w-4 text-neutral-500 " />
     ),
   },
   {
@@ -103,7 +102,7 @@ const items = [
     description: "Embark on exciting journeys and thrilling discoveries.",
     header: <Skeleton />,
     icon: (
-      <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500 dark:text-neutral-400" />
+      <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500 " />
     ),
   },
 ];
