@@ -44,7 +44,6 @@ export default function About() {
 
         {/* Section Vidéo */}
         <Parallax speed={-5} className="mt-16 w-full max-w-4xl">
-          <div className="relative w-full h-64 sm:h-96">
             <video
               className="w-full h-full rounded-xl shadow-lg"
               src="/DroneViewStrate.mp4"
@@ -54,7 +53,6 @@ export default function About() {
               autoPlay
               playsInline
             />
-          </div>
         </Parallax>
 
       </div>
