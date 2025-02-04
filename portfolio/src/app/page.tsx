@@ -29,41 +29,47 @@ const DummyContent = ({ src }: { src: string }) => {
 // Tableau de données pour les cartes du carousel
 const data = [
   {
-    category: "Web Design",
-    title: "Création d'expériences interactives.",
+    category: "Sketch",
+    title: "Travail d'interpretation",
     src: "/photo.jpg",
     content: <DummyContent src="/photo.jpg" />,
   },
   {
     category: "Typographie",
-    title: "L'identité visuelle au service de l'émotion.",
+    title: "A la plume et à l'encre",
     src: "/Draco.jpg",
     content: <DummyContent src="/Draco.jpg" />,
   },
   {
-    category: "UX/UI",
-    title: "L'expérience utilisateur avant tout.",
+    category: "Projet",
+    title: "La liaison, parfum",
     src: "/chambre.jpg",
     content: <DummyContent src="/chambre.jpg" />,
   },
   {
-    category: "Illustration",
-    title: "Donner vie aux idées avec le digital.",
-    src: "/espace.jpg",
-    content: <DummyContent src="/espace.jpg" />,
+    category: "Projet",
+    title: "Résurgence, Signage",
+    src: "/miroir_seine5_5.png",
+    content: <DummyContent src="/miroir_seine5_5.png" />,
   },
   {
-    category: "Motion Design",
-    title: "Quand l'animation sublime le message.",
-    src: "/barquette.jpg",
-    content: <DummyContent src="/barquette.jpg" />,
+    category: "Packaging",
+    title: "Pom’Potes",
+    src: "/barquette.png",
+    content: <DummyContent src="/barquette.png" />,
   },
   {
-    category: "Créativité",
-    title: "Un regard unique sur chaque projet.",
+    category: "Création de jeux",
+    title: "Freeworks",
     src: "/couleur.jpg",
     content: <DummyContent src="/couleur.jpg" />,
   },
+  {
+    category: "A la main",
+    title: "Dessin d'observation",
+    src: "/begude.jpg",
+    content: <DummyContent src="/begude.jpg" />
+  }
 ];
 
 export default function HomePage() {
@@ -95,7 +101,7 @@ export default function HomePage() {
       </div>
 
       {/* SECTION CAROUSEL */}
-      <div className="w-full h-full py-20 bg-OtherGreenCustom">
+      <div id="carousel-section" className="w-full h-full py-20 bg-OtherGreenCustom">
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 font-Montserrat">
           Découvrez mes réalisations.
         </h2>
