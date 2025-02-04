@@ -15,7 +15,8 @@ const config: Config = {
         foreground: "var(--foreground)",
         'DarkGreenCustom': '#ACBD83',
         'greenCustom': '#c1cd88',
-        'OtherGreenCustom': '#dfe4c8'
+        'OtherGreenCustom': '#dfe4c8',
+        'ClearBlueCustom': '#7DCCDB',
       },
       fontFamily: {
         kiera: ["Kiera", "sans-serif"],

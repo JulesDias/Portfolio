@@ -1,3 +1,4 @@
+// page.tsx
 'use client';
 
 import Image from "next/image";
@@ -8,9 +9,9 @@ import { motion } from "framer-motion"; // Optionnel si vous souhaitez animer l'
 // Composant pour le contenu de chaque carte
 const DummyContent = ({ src }: { src: string }) => {
   return (
-    <div className="bg-[#F5F5F7]  p-8 md:p-14 rounded-3xl mb-4">
-      <p className="text-neutral-600  text-base md:text-2xl font-sans max-w-3xl mx-auto">
-        <span className="font-bold text-neutral-700 ">
+    <div className="bg-[#F5F5F7] p-8 md:p-14 rounded-3xl mb-4">
+      <p className="text-neutral-600 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+        <span className="font-bold text-neutral-700">
           Chaque projet est une nouvelle aventure créative.
         </span>{" "}
         Mon approche du design repose sur l'innovation, la précision et l'émotion.
@@ -29,47 +30,54 @@ const DummyContent = ({ src }: { src: string }) => {
 // Tableau de données pour les cartes du carousel
 const data = [
   {
-    category: "Sketch",
-    title: "Travail d'interpretation",
+    category: "Croquis",
+    title: "Travail d'interprétation",
     src: "/photo.jpg",
+    href: "/projet/sketch", // lien spécifique
     content: <DummyContent src="/photo.jpg" />,
   },
   {
     category: "Typographie",
     title: "A la plume et à l'encre",
     src: "/Draco.jpg",
+    href: "/projet/typographie",
     content: <DummyContent src="/Draco.jpg" />,
   },
   {
     category: "Projet",
     title: "La liaison, parfum",
     src: "/chambre.jpg",
+    href: "/projet/chambre",
     content: <DummyContent src="/chambre.jpg" />,
   },
   {
     category: "Projet",
-    title: "Résurgence, Signage",
+    title: "Résurgence, Signalétique",
     src: "/miroir_seine5_5.png",
-    content: <DummyContent src="/miroir_seine5_5.png" />,
+    href: "/projet/signaletique",
+    content: <DummyContent src="/resurgence/miroir_seine5_5.png" />,
   },
   {
     category: "Packaging",
     title: "Pom’Potes",
     src: "/barquette.png",
+    href: "/projet/packaging",
     content: <DummyContent src="/barquette.png" />,
   },
   {
     category: "Création de jeux",
     title: "Freeworks",
     src: "/couleur.jpg",
+    href: "/projet/jeux",
     content: <DummyContent src="/couleur.jpg" />,
   },
   {
     category: "A la main",
     title: "Dessin d'observation",
     src: "/begude.jpg",
-    content: <DummyContent src="/begude.jpg" />
-  }
+    href: "/projet/dessin",
+    content: <DummyContent src="/begude.jpg" />,
+  },
 ];
 
 export default function HomePage() {
