@@ -1,6 +1,40 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function ProjetResurgence() {
+  const [isClient, setIsClient] = useState(false); // État pour vérifier si c'est le client
+
+  useEffect(() => {
+    // Indiquer que le rendu est fait côté client
+    setIsClient(true);
+
+    // Vérification du rafraîchissement
+    const hasAlreadyReloaded = sessionStorage.getItem("hasReloaded");
+
+    // Si la page n'a pas été rafraîchie
+    if (!hasAlreadyReloaded) {
+      sessionStorage.setItem("hasReloaded", "true");
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
+    }
+
+    // Faire défiler la page vers le haut
+    window.scrollTo(0, 0);
+
+    return () => {
+      // Supprimer le flag pour la prochaine fois si l'utilisateur quitte la page
+      sessionStorage.removeItem("hasReloaded");
+    };
+  }, []);
+
+  if (!isClient) {
+    // On attend que la page soit entièrement rendue côté client avant d'afficher le contenu
+    return null;
+  }
+
   return (
     <div className="min-h-screen bg-white text-black p-10 flex flex-col md:flex-row">
       {/* Section de gauche */}
@@ -23,7 +57,6 @@ export default function ProjetResurgence() {
             width={500}
             height={200}
             alt="logo"
-            className=""
           />
         </div>
         <p className="mt-5 text-lg font-Montserrat">
@@ -45,15 +78,44 @@ export default function ProjetResurgence() {
             alt="blob"
             className="absolute"
           />
-            <div className="relative z-10 flex flex-col space-y-6 mt-10">
-            <Image
-              src="/resurgence/Montagne.jpg"
-              width={200}
-              height={200}
-              alt="Montagne"
-              className="rounded-lg"
-            />
+          <div className="relative z-10 flex flex-col space-y-6 mt-10">
+            <div className="relative right-[-60px]">
+              <Image
+                src="/resurgence/Montagne.jpg"
+                width={200}
+                height={200}
+                alt="Montagne"
+                className="rounded-lg"
+              />
             </div>
+            <div className="relative left-[-60px]">
+              <Image
+                src="/resurgence/Miroir.jpg"
+                width={200}
+                height={200}
+                alt="Miroir"
+                className="rounded-lg"
+              />
+            </div>
+            <div className="relative right-[-60px]">
+              <Image
+                src="/resurgence/Hellfest.jpg"
+                width={200}
+                height={200}
+                alt="Hellfest"
+                className="rounded-lg"
+              />
+            </div>
+            <div className="relative left-[-60px]">
+              <Image
+                src="/resurgence/Salle.jpg"
+                width={200}
+                height={200}
+                alt="Salle"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

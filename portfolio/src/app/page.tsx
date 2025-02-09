@@ -4,7 +4,7 @@
 import Image from "next/image";
 import { Parallax } from "react-scroll-parallax";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel"; // Assurez-vous que ces imports pointent vers le bon chemin
-import { motion } from "framer-motion"; // Optionnel si vous souhaitez animer l'apparition
+import { motion } from "framer-motion"; 
 
 // Composant pour le contenu de chaque carte
 const DummyContent = ({ src }: { src: string }) => {
@@ -53,7 +53,7 @@ const data = [
   {
     category: "Projet",
     title: "Résurgence, Signalétique",
-    src: "/miroir_seine5_5.png",
+    src: "/resurgence/miroir_seine5_5.png",
     href: "/projet/signaletique",
     content: <DummyContent src="/resurgence/miroir_seine5_5.png" />,
   },
@@ -102,7 +102,7 @@ export default function HomePage() {
               <span className="italic text-greenCustom">portfolio</span>
             </h1>
             <p className="text-lg mt-6 font-Montserrat text-DarkGreenCustom font-bold">
-              Author: Ludivine Rameaux
+              Auteure: Ludivine Rameaux
             </p>
           </div>
         </Parallax>
