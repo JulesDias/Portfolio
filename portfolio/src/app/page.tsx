@@ -67,9 +67,9 @@ const data = [
   {
     category: "Création de jeux",
     title: "Travaux Libres",
-    src: "/couleur.jpg",
+    src: "/jeuCouleur.jpg",
     href: "/projet/jeux",
-    content: <DummyContent src="/couleur.jpg" />,
+    content: <DummyContent src="jeuCouleur.jpg" />,
   },
   {
     category: "A la main",
