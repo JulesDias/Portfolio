@@ -66,7 +66,7 @@ const data = [
   },
   {
     category: "Création de jeux",
-    title: "Freeworks",
+    title: "Travaux Libres",
     src: "/couleur.jpg",
     href: "/projet/jeux",
     content: <DummyContent src="/couleur.jpg" />,
@@ -74,9 +74,9 @@ const data = [
   {
     category: "A la main",
     title: "Dessin d'observation",
-    src: "/begude.jpg",
+    src: "/Begude.jpg",
     href: "/projet/dessin",
-    content: <DummyContent src="/begude.jpg" />,
+    content: <DummyContent src="/Begude.jpg" />,
   },
 ];
 

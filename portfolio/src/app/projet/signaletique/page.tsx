@@ -53,7 +53,7 @@ export default function ProjetResurgence() {
         </p>
         <div className="relative mt-10">
           <Image
-            src="/resurgence/logoResurgence.png"
+            src="/resurgence/LogoResurgence.png"
             width={500}
             height={200}
             alt="logo"
@@ -108,7 +108,7 @@ export default function ProjetResurgence() {
             </div>
             <div className="relative left-[-60px]">
               <Image
-                src="/resurgence/Salle.jpg"
+                src="/resurgence/salle.jpg"
                 width={200}
                 height={200}
                 alt="Salle"
