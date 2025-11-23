@@ -18,8 +18,14 @@ export default function Header() {
         } else {
           setIsHidden(false);
         }
+      } else {
+        // Si carousel-section n'existe pas sur la page, toujours afficher le header
+        setIsHidden(false);
       }
     };
+
+    // Vérifier immédiatement au chargement de la page
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -27,9 +33,8 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full p-6 flex justify-center items-center bg-white sticky top-0 z-50 transition-all duration-500 ${
-        isHidden ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0"
-      }`}
+      className={`w-full p-6 flex justify-center items-center bg-white sticky top-0 z-50 transition-all duration-500 ${isHidden ? "opacity-0 -translate-y-full" : "opacity-100 translate-y-0"
+        }`}
       style={{
         background:
           "linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))",

@@ -22,6 +22,8 @@ const config: Config = {
         kiera: ["Kiera", "sans-serif"],
         Cinematografica: ["Cinematografica", "sans-serif"],
         Montserrat: ["Montserrat", "sans-serif"],
+        Poppins: ["Poppins", "sans-serif"],
+        Avenir: ["Avenir", "sans-serif"],
       },
     },
   },

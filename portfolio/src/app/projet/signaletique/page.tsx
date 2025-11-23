@@ -80,9 +80,8 @@ export default function ProjetResurgence() {
               ].map((src, index) => (
                 <div
                   key={index}
-                  className={`relative ${
-                    index % 2 === 0 ? "right-[-60px]" : "left-[-60px]"
-                  }`}
+                  className={`relative ${index % 2 === 0 ? "right-[-60px]" : "left-[-60px]"
+                    }`}
                 >
                   <Image
                     src={src}

@@ -4,7 +4,7 @@
 import Image from "next/image";
 import { Parallax } from "react-scroll-parallax";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel"; // Assurez-vous que ces imports pointent vers le bon chemin
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 
 // Composant pour le contenu de chaque carte
 const DummyContent = ({ src }: { src: string }) => {
@@ -60,9 +60,9 @@ const data = [
   {
     category: "Packaging",
     title: "Pom’Potes",
-    src: "/barquette.png",
-    href: "/projet/packaging",
-    content: <DummyContent src="/barquette.png" />,
+    src: "/pompotes/barquette.png",
+    href: "/projet/pompotes",
+    content: <DummyContent src="/pompotes/barquette.png" />,
   },
   {
     category: "Création de jeux",
@@ -98,7 +98,7 @@ export default function HomePage() {
         <Parallax speed={50}>
           <div className="relative z-20 text-center">
             <h1 className="text-6xl sm:text-8xl font-extrabold leading-tight tracking-widest">
-              Bienvenu sur mon <br />
+              Bienvenue sur mon <br />
               <span className="italic text-greenCustom">portfolio</span>
             </h1>
             <p className="text-lg mt-6 font-Montserrat text-DarkGreenCustom font-bold">
