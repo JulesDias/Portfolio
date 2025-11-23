@@ -17,6 +17,7 @@ const config: Config = {
         'greenCustom': '#c1cd88',
         'OtherGreenCustom': '#dfe4c8',
         'ClearBlueCustom': '#7DCCDB',
+        'PinkCustom': '#f7c0c5',
       },
       fontFamily: {
         kiera: ["Kiera", "sans-serif"],

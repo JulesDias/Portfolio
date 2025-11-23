@@ -104,12 +104,12 @@ export default function CreationPage() {
       className="min-h-screen bg-white"
     >
       {/* Hero Section */}
-      <div className="w-full bg-gradient-to-b from-white to-OtherGreenCustom py-16 md:py-24 px-6 md:px-10">
+      <div className="w-full bg-gradient-to-b bg-PinkCustom py-16 md:py-24 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-kiera text-black mb-6 tracking-wide">
-            Mes <span className="text-greenCustom italic">Créations</span>
+          <h1 className="text-5xl md:text-7xl font-Poppins text-white mb-6 tracking-wide">
+            Mes <span className="text-white">Créations</span>
           </h1>
-          <p className="text-lg md:text-xl font-Montserrat text-gray-700 max-w-3xl">
+          <p className="text-lg md:text-xl font-Avenir text-white max-w-3xl">
             Découvrez l'ensemble de mes projets créatifs : packaging, signalétique,
             typographie, design et bien plus encore.
           </p>
@@ -124,7 +124,7 @@ export default function CreationPage() {
               <BentoGridItem
                 title={
                   <div className="space-y-1">
-                    <span className="text-xs md:text-sm text-greenCustom font-bold font-Montserrat uppercase tracking-wide">
+                    <span className="text-xs md:text-sm text-PinkCustom font-bold font-Montserrat uppercase tracking-wide">
                       {project.category}
                     </span>
                     <div className="text-base md:text-xl font-bold font-Montserrat text-neutral-800">
@@ -138,7 +138,7 @@ export default function CreationPage() {
                   </span>
                 }
                 header={<ProjectImage src={project.image} alt={project.title} />}
-                className="cursor-pointer hover:border-greenCustom border-2 transition-all duration-300 h-full"
+                className="cursor-pointer hover:border-PinkCustom border-2 transition-all duration-300 h-full"
               />
             </Link>
           ))}
@@ -146,17 +146,17 @@ export default function CreationPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="w-full bg-gradient-to-b from-OtherGreenCustom to-white py-16 md:py-20 px-6 md:px-10">
+      <div className="w-full bg-gradient-to-b bg-PinkCustom py-16 md:py-20 px-6 md:px-10">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-kiera mb-6 text-black">
+          <h2 className="text-3xl md:text-5xl font-Poppins mb-6 text-white">
             Intéressé par mon travail ?
           </h2>
-          <p className="text-lg md:text-xl font-Montserrat text-gray-700 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl font-Avenir text-white mb-8 max-w-2xl mx-auto">
             N'hésitez pas à me contacter pour discuter de vos projets ou en savoir plus sur mon parcours.
           </p>
           <Link
             href="/about"
-            className="inline-block bg-greenCustom text-white px-8 py-4 rounded-lg font-bold font-Montserrat hover:bg-DarkGreenCustom transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="inline-block bg-white text-PinkCustom px-8 py-4 rounded-lg font-bold font-Poppins hover:bg-DarkPinkCustom transition-colors duration-300 shadow-lg hover:shadow-xl"
           >
             En savoir plus sur moi
           </Link>

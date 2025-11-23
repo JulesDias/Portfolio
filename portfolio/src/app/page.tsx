@@ -94,14 +94,14 @@ export default function HomePage() {
       className="flex flex-col"
     >
       {/* Section d'accueil avec effet Parallax */}
-      <div className="h-screen bg-white flex items-center justify-center text-black relative font-kiera">
+      <div className="h-screen bg-white flex items-center justify-center text-black relative font-Poppins">
         <Parallax speed={50}>
           <div className="relative z-20 text-center">
-            <h1 className="text-6xl sm:text-8xl font-extrabold leading-tight tracking-widest">
+            <h1 className="text-6xl sm:text-8xl font-extrabold leading-tight tracking-normal">
               Bienvenue sur mon <br />
-              <span className="italic text-greenCustom">portfolio</span>
+              <span className="text-PinkCustom">portfolio</span>
             </h1>
-            <p className="text-lg mt-6 font-Montserrat text-DarkGreenCustom font-bold">
+            <p className="text-lg mt-6 font-Montserrat text-PinkCustom font-bold">
               Auteure: Ludivine Rameaux
             </p>
           </div>
@@ -109,9 +109,9 @@ export default function HomePage() {
       </div>
 
       {/* SECTION CAROUSEL */}
-      <div id="carousel-section" className="w-full h-full py-20 bg-OtherGreenCustom">
-        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 font-Montserrat">
-          Découvrez mes réalisations.
+      <div id="carousel-section" className="w-full h-full py-20 bg-PinkCustom">
+        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-white font-Montserrat">
+          Découvrez mes réalisations :
         </h2>
         <Carousel items={cards} />
       </div>

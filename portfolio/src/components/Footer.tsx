@@ -26,7 +26,7 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-2">Ressources</h3>
               <ul className="space-y-1">
-                <li><a href="#" className="hover:underline">Projets</a></li>
+                <li><a href="/Creation" className="hover:underline">Projets</a></li>
                 <li><a href="#" className="hover:underline">Mentions légales</a></li>
                 <li><a href="#" className="hover:underline">CGU</a></li>
               </ul>
@@ -38,10 +38,7 @@ export default function Footer() {
             <a href="https://www.linkedin.com/in/ludivine-rameaux/" className="text-gray-600  hover:text-gray-900">
               <FaLinkedin size={24} />
             </a>
-            <a href="#" className="text-gray-600  hover:text-gray-900 ">
-              <FaYoutube size={24} />
-            </a>
-            <a href="https://www.instagram.com/ldv.rm/" className="text-gray-600  hover:text-gray-900 ">
+            <a href="https://www.instagram.com/ludi.visuals/" className="text-gray-600  hover:text-gray-900 ">
               <FaInstagram size={24} />
             </a>
           </div>

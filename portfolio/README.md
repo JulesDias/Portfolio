@@ -1,36 +1,183 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio de Ludivine Rameaux
 
-## Getting Started
+Portfolio professionnel présentant les projets de design et créations de Ludivine Rameaux, étudiante à Strate École de Design.
 
-First, run the development server:
+## 📋 Description
+
+Site web portfolio moderne développé avec Next.js 15, présentant différents projets de design incluant :
+- **Pom'Potes** - Extension de gamme packaging (Automne 2023)
+- **Résurgence** - Projet de signalétique
+- **Sketches & Typographie** - Créations graphiques
+- Galerie de projets divers (jeux, dessins, photographie)
+
+## 🚀 Technologies
+
+- **Framework** : Next.js 15 (App Router)
+- **React** : 19.0
+- **TypeScript** : Configuration stricte
+- **Styling** : Tailwind CSS avec palette personnalisée
+- **Animations** : Motion (Framer Motion), React Scroll Parallax
+- **UI Components** : Mantine Core, composants personnalisés
+- **Icônes** : Tabler Icons, React Icons
+
+### Palette de couleurs personnalisée
+- `greenCustom`: #c1cd88
+- `DarkGreenCustom`: #ACBD83
+- `OtherGreenCustom`: #dfe4c8
+- `ClearBlueCustom`: #7DCCDB
+
+### Typographies
+- **Titres** : Poppins (semi-bold), Kiera Display, Cinematografica
+- **Texte** : Avenir, Montserrat Variable
+
+## 📦 Installation
 
 ```bash
+# Cloner le projet
+git clone [url-du-repo]
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Scripts disponibles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev      # Lance le serveur de développement
+npm run build    # Compile le projet pour la production
+npm run start    # Lance le serveur de production
+npm run lint     # Vérifie le code avec ESLint
+```
 
-## Learn More
+## 📁 Structure du projet
 
-To learn more about Next.js, take a look at the following resources:
+```
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx              # Page d'accueil avec carousel
+│   │   ├── about/                # Page à propos
+│   │   ├── Creation/             # Galerie Bento Grid
+│   │   └── projet/
+│   │       ├── pompotes/         # Projet packaging Pom'Potes
+│   │       ├── signaletique/     # Projet Résurgence
+│   │       ├── sketch/
+│   │       └── typographie/
+│   ├── components/
+│   │   ├── Header.tsx            # Navigation avec auto-hide
+│   │   ├── Footer.tsx            # Pied de page
+│   │   ├── ClientParallaxWrapper.tsx
+│   │   └── ui/                   # Composants UI réutilisables
+│   ├── styles/
+│   │   └── globals.css           # Styles globaux + @font-face
+│   └── lib/
+│       └── utils.ts              # Utilitaires
+├── public/
+│   ├── fonts/                    # Polices personnalisées
+│   ├── pompotes/                 # Images projet Pom'Potes
+│   └── resurgence/               # Images projet Résurgence
+├── tailwind.config.ts            # Configuration Tailwind
+└── next.config.ts                # Configuration Next.js
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Fonctionnalités
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Design responsive** : Optimisé pour mobile, tablette et desktop
+- **Navigation intelligente** : Header qui se cache au scroll quand un carousel est présent
+- **Animations fluides** : Transitions et effets de parallaxe
+- **Galerie Bento Grid** : Mise en page moderne pour les projets
+- **Images optimisées** : Utilisation de Next.js Image pour la performance
+- **Mode sombre** : Intégration du toggle dark mode
 
-## Deploy on Vercel
+## 🖼️ Pages principales
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Accueil (`/`)
+Carousel Apple-style avec présentation des projets phares
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### À propos (`/about`)
+Présentation de Ludivine avec vidéo responsive
+
+### Créations (`/Creation`)
+Galerie Bento Grid affichant 9 projets avec effets hover
+
+### Projets
+- `/projet/pompotes` - Extension packaging Pom'Potes
+- `/projet/signaletique` - Signalétique Résurgence
+- `/projet/sketch` - Dessins et croquis
+- `/projet/typographie` - Créations typographiques
+
+## 📝 Configuration des fonts
+
+Les polices sont chargées via `@font-face` dans `globals.css` et référencées dans `tailwind.config.ts` :
+
+```css
+/* globals.css */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-SemiBold.ttf');
+}
+```
+
+```typescript
+// tailwind.config.ts
+fontFamily: {
+  Poppins: ['Poppins', 'sans-serif'],
+  Avenir: ['Avenir', 'Montserrat', 'sans-serif'],
+  // ...
+}
+```
+
+## 🚢 Déploiement
+
+### Vercel (recommandé)
+Le projet est optimisé pour un déploiement sur Vercel :
+
+1. Connecter le repository GitHub à Vercel
+2. Configurer les variables d'environnement si nécessaire
+3. Déployer automatiquement à chaque push
+
+```bash
+# Ou utiliser Vercel CLI
+npm i -g vercel
+vercel
+```
+
+### Autre hébergeur
+```bash
+npm run build
+npm run start
+```
+
+## 🔧 Personnalisation
+
+### Modifier les couleurs
+Éditer `tailwind.config.ts` :
+```typescript
+colors: {
+  greenCustom: '#c1cd88',
+  // Ajouter vos couleurs
+}
+```
+
+### Ajouter un projet
+1. Créer un dossier dans `src/app/projet/[nom-projet]/`
+2. Ajouter `page.tsx` avec le contenu
+3. Placer les images dans `public/[nom-projet]/`
+4. Mettre à jour la page `Creation` avec la nouvelle carte
+
+## 📄 License
+
+Projet personnel - Tous droits réservés © Ludivine Rameaux
+
+## 👤 Contact
+
+- **Portfolio** : [https://ludirportfolio.vercel.app/]
+- **LinkedIn** : [https://www.linkedin.com/in/ludivine-rameaux/]
+- **Instagram** : [https://www.instagram.com/ludi.visuals/]
+
+---

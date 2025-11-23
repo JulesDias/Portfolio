@@ -41,12 +41,8 @@ export default function Header() {
       }}
     >
       <div className="flex items-end space-x-4">
-        <Link href="/">
-          <p className="text-4xl text-greenCustom font-kiera leading-none">
-            home
-          </p>
-        </Link>
-        <nav className="flex items-end space-x-4 font-Montserrata text-lg font-bold leading-2">
+        <nav className="flex items-end space-x-4 font-Poppins text-lg font-bold leading-2">
+          <Link href="/" className="text-PinkCustom">Home</Link>
           <Link href="/about" className="text-gray-900">Qui suis-je ?</Link>
           <Link href="/Creation" className="text-gray-900">Mes Créations</Link>
         </nav>
