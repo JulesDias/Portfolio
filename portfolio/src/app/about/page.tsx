@@ -26,7 +26,7 @@ export default function About() {
                 Ludivine Rameaux
               </h1>
               <h2 className="font-Poppins text-2xl md:text-3xl text-white mb-6">
-                Designer graphique & d'identité visuelle
+                Designer graphique d'identité visuelle
               </h2>
               <p className="font-Avenir text-lg text-white leading-relaxed mb-6">
                 Passionnée par le design graphique, avec une sensibilité particulière pour l'édition et le packaging, je recherche un stage de fin d'études à partir de juin 2026 afin d'approfondir ma pratique et contribuer à des projets porteurs de sens.
@@ -34,10 +34,6 @@ export default function About() {
               <div className="flex flex-col sm:flex-row gap-4 font-Avenir text-white">
                 <a href="mailto:ludi.rameaux@gmail.com" className="hover:text-pink-400 transition-colors">
                   📧 ludi.rameaux@gmail.com
-                </a>
-                <span className="hidden sm:block">•</span>
-                <a href="tel:0608263742" className="hover:text-pink-400 transition-colors">
-                  📱 06 08 26 37 42
                 </a>
                 <span className="hidden sm:block">•</span>
                 <span>📍 Montesson, Yvelines</span>
@@ -57,23 +53,29 @@ export default function About() {
           <div className="border-l-4 border-PinkCustom pl-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
               <h3 className="font-Poppins text-xl font-bold text-gray-900">
-                Master en Design Industriel, Filière d'Identité
+                Master en Design Industriel, Filière Identité[s]
               </h3>
               <span className="font-Avenir text-gray-600">Septembre 2021 - Aujourd'hui</span>
             </div>
-            <p className="font-Avenir text-gray-700 mb-1">Strate, École de Design</p>
-            <p className="font-Avenir text-gray-600 italic">5ème année de Master - Sèvres</p>
+            <p className="font-Avenir text-gray-700 mb-1 italic">Strate, École de Design - Sèvres</p>
+            <p className="font-Avenir text-gray-700 leading-relaxed">
+              Spécialisation en 3ème année dans le cursus de Design Identité, travail autour du packaging, du retail et de la typographie avec l'utilisation de la Suite Adobe.
+            </p>
           </div>
 
           <div className="border-l-4 border-PinkCustom pl-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
               <h3 className="font-Poppins text-xl font-bold text-gray-900">
-                Design and Visual Culture, Master
+                Design and Visual Culture Master
               </h3>
               <span className="font-Avenir text-gray-600">Septembre 2024 - Janvier 2025</span>
             </div>
-            <p className="font-Avenir text-gray-700 mb-1">IADE, Creative University</p>
-            <p className="font-Avenir text-gray-600 italic">Erasmus - Lisbonne</p>
+            <p className="font-Avenir text-gray-700 mb-1 italic">IADE, Creative University - Lisbonne (Erasmus)</p>
+            <p className="font-Avenir text-gray-700 leading-relaxed">
+              Cours suivis en Visual Culture Project, Typography, Photography, Art and Visual Culture, et Workshops</p>
+            <p className="font-Avenir text-gray-700 leading-relaxed">
+              Formation orientée vers la pratique du design graphique et de la culture visuelle, avec une approche critique et contemporaine du design.
+            </p>
           </div>
         </div>
       </div>
@@ -88,27 +90,27 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-xl shadow-md">
               <h3 className="font-Poppins text-xl font-bold text-gray-900 mb-2">
-                DXOMARK - Designer Graphique
+                DXOMARK - Designer Graphique Stagiaire
               </h3>
               <p className="font-Avenir text-gray-600 mb-4">Février - Juillet 2024 • Boulogne-Billancourt</p>
               <p className="font-Avenir text-gray-700 leading-relaxed">
-                Production d'éléments graphiques print et web pour la communication interne et externe de l'entreprise, travail sur la cohérence visuelle des supports et création de logo
+                Production d'éléments graphiques print et web pour la communication interne et externe de l'entreprise, travail sur la cohérence visuelle des supports et création de logo.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-md">
               <h3 className="font-Poppins text-xl font-bold text-gray-900 mb-2">
-                WLC Concept
+                WLC Concept - Stage
               </h3>
               <p className="font-Avenir text-gray-600 mb-4">Juin 2023 • Le Vésinet</p>
               <p className="font-Avenir text-gray-700 leading-relaxed">
-                Participation aux projets de l'entreprise, de la production à l'installation des panneaux acoustiques et alimentation des réseaux sociaux
+                Participation aux projets de l'entreprise, de la production à l'installation des panneaux acoustiques et alimentation des réseaux sociaux.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl shadow-md">
               <h3 className="font-Poppins text-xl font-bold text-gray-900 mb-2">
-                Fragment d'Art - Artisan Mosaïste
+                Fragment d'Art - Stage
               </h3>
               <p className="font-Avenir text-gray-600 mb-4">Juin 2023</p>
               <p className="font-Avenir text-gray-700 leading-relaxed">
@@ -118,11 +120,11 @@ export default function About() {
 
             <div className="bg-white p-6 rounded-xl shadow-md">
               <h3 className="font-Poppins text-xl font-bold text-gray-900 mb-2">
-                Prisma Media
+                Prisma Media - Stage d'observation
               </h3>
               <p className="font-Avenir text-gray-600 mb-4">Juin 2019 • Gennevilliers</p>
               <p className="font-Avenir text-gray-700 leading-relaxed">
-                Observation des différentes étapes de confection du magazine GEO, découverte des logiciels de mise en page et de retouche photo
+                Observation des différentes étapes de confection du magazine GEO, découverte des logiciels de mise en page et de retouche photo.
               </p>
             </div>
           </div>
@@ -144,19 +146,19 @@ export default function About() {
               <span className="font-Avenir text-gray-600">Septembre 2025 - Juin 2026</span>
             </div>
             <p className="font-Avenir text-gray-700">
-              Encadrement et surveillance d'examens et de devoirs surveillés, gestion du temps et organisation des salles
+              Encadrement et surveillance d'examens et de devoirs sur table, gestion du temps et organisation des salles.
             </p>
           </div>
 
           <div className="border-l-4 border-PinkCustom pl-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
               <h3 className="font-Poppins text-xl font-bold text-gray-900">
-                Strate - Ambassadrice & Département Communication
+                Strate, Département Communication - Ambassadrice
               </h3>
               <span className="font-Avenir text-gray-600">Septembre 2022 - Juin 2026</span>
             </div>
             <p className="font-Avenir text-gray-700">
-              Ambassadrice et représentante de l'école à différents évènements, rédaction d'articles, transmission des valeurs de Strate auprès des futurs étudiants
+              Ambassadrice et représentante de l'école à différents évènements, rédaction d'articles, transmission des valeurs de Strate auprès des futurs étudiants.
             </p>
           </div>
 
@@ -168,7 +170,7 @@ export default function About() {
               <span className="font-Avenir text-gray-600">Septembre 2022 - Janvier 2024</span>
             </div>
             <p className="font-Avenir text-gray-700">
-              Rédaction d'articles, organisation d'évènements et membre fondateur de l'association sportive
+              Rédaction d'articles, organisation d'évènements et membre fondateur de l'association sportive.
             </p>
           </div>
         </div>
