@@ -17,7 +17,7 @@ export default function Header() {
     if (pathname?.startsWith("/projet/GPT")) return "text-[#68a585]";
     if (pathname?.startsWith("/projet/pompotes")) return "text-[#d8a99d]";
     if (pathname?.startsWith("/projet/signaletique")) return "text-[#65a9c6]";
-    if (pathname?.startsWith("/projet/sketch")) return "text-[#afd274]";
+    if (pathname?.startsWith("/projet/clipper")) return "text-[#afd274]";
     if (pathname?.startsWith("/projet/Ececook")) return "text-[#a95156]";
     if (pathname?.startsWith("/projet/workshop")) return "text-[#e49823]";
     return "text-PinkCustom"; // couleur par défaut

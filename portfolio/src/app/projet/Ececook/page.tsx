@@ -90,11 +90,11 @@ export default function ProjetEceCook() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-[#a95156]/20 to-[#8b3f43]/30 p-8 rounded-2xl">
-            <h3 className="font-Poppins text-2xl font-bold mb-4 text-gray-900">
+          <div className="bg-[#a95156] p-8 rounded-2xl">
+            <h3 className="font-Poppins text-2xl font-bold mb-4 text-white">
               Enjeux Créatifs
             </h3>
-            <div className="font-Avenir text-gray-700 space-y-3 leading-relaxed">
+            <div className="font-Avenir text-white space-y-3 leading-relaxed">
               <p>
                 Le travail s'est donc concentré sur une <strong>mise en page lisible et dynamique</strong>, associée à des éléments graphiques évocateurs du thème culinaire.
               </p>

@@ -28,8 +28,8 @@ export default function ProjetClipper() {
               </span>
             </div>
             <h1 className="font-Poppins text-5xl md:text-7xl font-bold text-white mb-6">
-              <div className="leading-tight">Clipper</div>
-              <span className="text-4xl md:text-5xl text-white block -mt-1 md:-mt-2">
+              <div className="leading-tight ml-[-3px]">Clipper</div>
+              <span className="text-4xl md:text-5xl text-white block -mt-1 md:-mt-2 pt-3">
                 Le Kit du Petit Chimiste
               </span>
             </h1>
@@ -107,14 +107,14 @@ export default function ProjetClipper() {
 
       {/* Section 3D avec Stickers */}
       <div id="carousel-section" className="bg-gradient-to-br from-[#afd274]/10 to-[#8db858]/20 py-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <h2 className="font-Poppins text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16 text-gray-900">
             Visuels 3D
           </h2>
           <div className="relative">
             {/* Image 3D Globale au centre */}
             <div className="flex justify-center mb-12">
-              <div className="max-w-3xl">
+              <div className="w-full max-w-3xl px-4 md:px-0">
                 <Image
                   src="/Clippers/Visu3DGlobal.png"
                   width={800}
@@ -125,56 +125,46 @@ export default function ProjetClipper() {
               </div>
             </div>
 
-            {/* Sticker Avant - En haut à droite */}
-            <motion.div
-              initial={{ opacity: 0, rotate: -15, scale: 0.8 }}
-              whileInView={{ opacity: 1, rotate: -8, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="absolute -top-8 -right-4 md:-top-24 md:right-24 w-48 md:w-80 z-30"
-            >
+            {/* Sticker Avant - En haut à droite - Caché sur mobile */}
+            <div className="hidden md:block absolute -top-20 right-4 lg:-top-40 lg:right-20 w-64 lg:w-[450px] z-30">
               <div className="transform rotate-[-8deg]">
                 <Image
                   src="/Clippers/Visu3dAvant.png"
-                  width={300}
-                  height={400}
+                  width={500}
+                  height={600}
                   alt="Vue 3D Avant"
                   className="w-full h-auto object-contain"
                 />
               </div>
-            </motion.div>
+            </div>
 
-            {/* Sticker Arrière - En bas à gauche */}
-            <motion.div
-              initial={{ opacity: 0, rotate: 15, scale: 0.8 }}
-              whileInView={{ opacity: 1, rotate: 6, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="absolute -bottom-8 -left-4 md:-bottom-12 md:left-32 w-48 md:w-64 z-10"
-            >
+            {/* Sticker Arrière - En bas à gauche - Caché sur mobile */}
+            <div className="hidden md:block absolute -bottom-16 left-0 lg:-bottom-24 lg:left-16 w-64 lg:w-[420px] z-10">
               <div className="transform rotate-[6deg]">
                 <Image
                   src="/Clippers/Visu3Darriere.png"
-                  width={300}
-                  height={400}
+                  width={550}
+                  height={650}
                   alt="Vue 3D Arrière"
                   className="w-full h-auto object-contain"
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Section Univers */}
-      <div className="max-w-7xl mx-auto px-8 py-20">
-        <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-8 text-gray-900">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+        <h2 className="font-Poppins text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 text-gray-900">
           Univers
         </h2>
-        <p className="font-Avenir text-gray-700 text-center max-w-3xl mx-auto mb-12 leading-relaxed">
+        <p className="font-Avenir text-gray-700 text-center max-w-3xl mx-auto mb-12 leading-relaxed px-4">
           Inspiré de l'univers du laboratoire, ce kit transforme la préparation du thé en une expérience sensorielle et ludique. Pensé pour initier à la découverte du thé, il invite à expérimenter à travers <strong>trois thés colorés</strong> : le Rooibos rouge, le Matcha bleu qui change de teinte au contact du citron, et le thé vert.
         </p>
 
-        <div className="flex flex-wrap justify-center items-center gap-4">
-          <div className="w-[calc(25%-1rem)] bg-white rounded-xl p-3 shadow-lg hover:shadow-xl transition-shadow">
+        <div className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-3 md:gap-4">
+          <div className="bg-white rounded-xl p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow md:w-[calc(25%-1rem)]">
             <Image
               src="/Clippers/UniversClippers1.webp"
               width={300}
@@ -183,7 +173,7 @@ export default function ProjetClipper() {
               className="w-full h-auto object-cover rounded-lg"
             />
           </div>
-          <div className="w-[calc(25%-1rem)] bg-white rounded-xl p-3 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-xl p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow md:w-[calc(25%-1rem)]">
             <Image
               src="/Clippers/UniversClippers2.jpg"
               width={300}
@@ -192,7 +182,7 @@ export default function ProjetClipper() {
               className="w-full h-auto object-cover rounded-lg"
             />
           </div>
-          <div className="w-[calc(25%-1rem)] bg-white rounded-xl p-3 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-xl p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow md:w-[calc(25%-1rem)]">
             <Image
               src="/Clippers/UniversClippers3.png"
               width={300}
@@ -201,9 +191,9 @@ export default function ProjetClipper() {
               className="w-full h-auto object-cover rounded-lg"
             />
           </div>
-          <div className="w-[calc(25%-1rem)] bg-white rounded-xl p-3 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-xl p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow md:w-[calc(25%-1rem)]">
             <Image
-              src="/Clippers/UniversClippers4.webp"
+              src="/Clippers/UniversClippers4.jpg"
               width={300}
               height={200}
               alt="Univers Clipper 4"
@@ -242,8 +232,8 @@ export default function ProjetClipper() {
 
       {/* Section finale - Points clés */}
       <div className="bg-[#afd274] py-20">
-        <div className="max-w-7xl mx-auto px-8">
-          <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <h2 className="font-Poppins text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16 text-white">
             Un Projet Expérimental et Ludique
           </h2>
 
