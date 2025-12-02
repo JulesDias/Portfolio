@@ -1,7 +1,61 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+
+// Composant Carousel Auto-Scroll
+function AutoScrollCarousel() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const carouselImages = [1, 2, 3, 4, 5, 6, 7, 8];
+    const duplicatedImages = [...carouselImages, ...carouselImages];
+
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+        if (!scrollContainer) return;
+
+        let scrollPosition = 0;
+        const scrollSpeed = 0.5;
+
+        const scroll = () => {
+            scrollPosition += scrollSpeed;
+            const maxScroll = scrollContainer.scrollWidth / 2;
+
+            if (scrollPosition >= maxScroll) {
+                scrollPosition = 0;
+            }
+
+            scrollContainer.scrollLeft = scrollPosition;
+        };
+
+        const intervalId = setInterval(scroll, 16);
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    return (
+        <div className="overflow-hidden">
+            <div
+                ref={scrollRef}
+                className="flex gap-6 overflow-x-hidden"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+                {duplicatedImages.map((num, index) => (
+                    <div key={index} className="flex-shrink-0 w-[250px] md:w-[320px]">
+                        <div className="bg-white p-4 rounded-2xl shadow-md h-[320px] md:h-[400px]">
+                            <Image
+                                src={`/GPT/Carousel${num}.jpg`}
+                                width={600}
+                                height={800}
+                                alt={`Visuel ${num}`}
+                                className="w-full h-full object-contain"
+                            />
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
 
 export default function ProjetGPT() {
     const [isClient, setIsClient] = useState(false);
@@ -36,7 +90,7 @@ export default function ProjetGPT() {
                         </p>
                         <div className="flex gap-4 font-Avenir text-sm text-white">
                             <div>
-                                <span className="font-semibold">Durée :</span> 3 mois
+                                <span className="font-semibold">Durée:</span> 3 mois
                             </div>
                             <div>•</div>
                             <div>
@@ -117,7 +171,7 @@ export default function ProjetGPT() {
             </div>
 
             {/* Section Visuels BD */}
-            <div id="carousel-section" className="bg-[#68A585]/10 py-20">
+            <div id="carousel-section" className="bg-white py-20">
                 <div className="max-w-7xl mx-auto px-8">
                     <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
                         La Bande Dessinée
@@ -152,6 +206,16 @@ export default function ProjetGPT() {
                         />
                     </div>
                 </div>
+            </div>
+
+            {/* Section Carousel Auto-Scroll */}
+            <div className="py-16 bg-[#68A585]">
+                <div className="max-w-7xl mx-auto px-8">
+                    <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+                        Exploration Visuelle
+                    </h2>
+                </div>
+                <AutoScrollCarousel />
             </div>
 
             {/* Section Processus */}
@@ -206,16 +270,16 @@ export default function ProjetGPT() {
                         Identité Visuelle
                     </h2>
 
-                    <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
+                    <div className="grid md:grid-cols-2 gap-12 items-stretch mb-12">
                         {/* Palette de couleurs */}
-                        <div className="bg-white p-8 rounded-2xl shadow-lg">
+                        <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col">
                             <h3 className="font-Poppins text-2xl font-bold mb-6 text-gray-900">
                                 Palette Risographie
                             </h3>
                             <p className="font-Avenir text-gray-700 mb-6 leading-relaxed">
                                 La couleur verte, symbole de ChatGPT, a été obtenue par mélange du jaune et du bleu disponibles en risographie. Trois couleurs principales composent l'identité du projet :
                             </p>
-                            <div className="space-y-4">
+                            <div className="space-y-4 flex-grow">
                                 <div className="flex items-center gap-4">
                                     <div className="w-16 h-16 rounded-lg bg-[#68A585] shadow-md"></div>
                                     <div>
@@ -246,7 +310,7 @@ export default function ProjetGPT() {
                                 La Mascotte
                             </h3>
                             <Image
-                                src="/GPT/Illustration1Bonhomme.png"
+                                src="/GPT/Illustration2Bonhommes.png"
                                 width={400}
                                 height={400}
                                 alt="Stickers mascotte ChatGPT"

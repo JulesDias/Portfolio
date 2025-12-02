@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // Composant AutoScrollCarousel
 function AutoScrollCarousel({ images }: { images: string[] }) {
@@ -48,9 +49,9 @@ function AutoScrollCarousel({ images }: { images: string[] }) {
                 {duplicatedImages.map((img, index) => (
                     <div
                         key={index}
-                        className="flex-shrink-0 w-[400px] md:w-[500px]"
+                        className="flex-shrink-0 w-[300px] md:w-[400px]"
                     >
-                        <div className="bg-white p-8 rounded-3xl h-[600px] flex items-center justify-center">
+                        <div className="bg-white p-6 rounded-3xl h-[450px] flex items-center justify-center">
                             <Image
                                 src={img}
                                 alt={`Analyse Yepoda ${(index % images.length) + 1}`}
@@ -107,14 +108,19 @@ export default function ProjetYepoda() {
                             </div>
                         </div>
                     </div>
-                    <div className="hidden md:block absolute right-[19%] bottom-0 w-[14%] h-full">
+                    <motion.div
+                        initial={{ opacity: 0, x: 100, scale: 0.8 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="hidden md:block absolute right-[19%] bottom-0 w-[14%] h-full"
+                    >
                         <Image
                             src="/Yepoda/StickersProduit2.png"
                             fill
                             alt="Image de stickers Yepoda"
                             className="object-contain drop-shadow-2xl rotate-12"
                         />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 
@@ -155,10 +161,10 @@ export default function ProjetYepoda() {
             </div>
 
             {/* Section Analyse de la marque - Carousel Auto-Scroll */}
-            <div id="carousel-section" className="bg-gray-50 py-20">
+            <div id="carousel-section" className="bg-PinkCustom py-20">
                 <div className="w-full">
-                    <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-8 text-gray-900 px-8">
-                        Analyse de la Marque
+                    <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-8 text-white px-8">
+                        Univers de la Marque
                     </h2>
                     <AutoScrollCarousel images={[
                         "/Yepoda/VisuelCarousel1.jpg",
