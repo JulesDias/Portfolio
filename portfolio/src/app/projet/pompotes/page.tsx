@@ -36,7 +36,7 @@ export default function ProjetPompotes() {
                         </p>
                         <div className="flex gap-4 font-Avenir text-sm text-white">
                             <div>
-                                <span className="font-semibold">Durée:</span> 3 mois
+                                <span className="font-semibold">Durée :</span> 3 mois
                             </div>
                             <div>•</div>
                             <div>

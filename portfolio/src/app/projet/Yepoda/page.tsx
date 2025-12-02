@@ -99,19 +99,19 @@ export default function ProjetYepoda() {
                         </p>
                         <div className="flex gap-4 font-Avenir text-sm text-white">
                             <div>
-                                <span className="font-semibold">Durée:</span> 3 mois
+                                <span className="font-semibold">Durée :</span> 3 mois
                             </div>
                             <div>•</div>
                             <div>
-                                <span className="font-semibold">Type:</span> Projet Individuel
+                                <span className="font-semibold">Type :</span> Projet Individuel
                             </div>
                         </div>
                     </div>
-                    <div className="hidden md:block relative w-[18%] h-full">
+                    <div className="hidden md:block absolute right-[19%] bottom-0 w-[14%] h-full">
                         <Image
                             src="/Yepoda/StickersProduit2.png"
                             fill
-                            alt="Logo Yepoda"
+                            alt="Image de stickers Yepoda"
                             className="object-contain drop-shadow-2xl rotate-12"
                         />
                     </div>
