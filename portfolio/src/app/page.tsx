@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { Parallax } from "react-scroll-parallax";
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel"; // Assurez-vous que ces imports pointent vers le bon chemin
+import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { motion } from "framer-motion";
 
 // Composant pour le contenu de chaque carte
@@ -30,53 +30,60 @@ const DummyContent = ({ src }: { src: string }) => {
 // Tableau de données pour les cartes du carousel
 const data = [
   {
-    category: "Croquis",
-    title: "Travail d'interprétation",
-    src: "/photo.jpg",
-    href: "/projet/sketch",
-    content: <DummyContent src="/photo.jpg" />,
-  },
-  {
     category: "Yepoda",
     title: "Typographie Identitaire",
-    src: "/Yepoda/StickersProduit2.png",
+    src: "/Yepoda/StickersProduit1.png",
     href: "/projet/Yepoda",
-    content: <DummyContent src="/Yepoda/StickersProduit2.png" />,
+    color: "#f7c0c5",
+    content: <DummyContent src="/Yepoda/StickersProduit1.png" />,
   },
   {
-    category: "ChatGPT ton meilleur ami ?",
-    title: "Fanzine",
+    category: "ChatGPT, ton meilleur ami ?",
+    title: "Fanzine 5 plis",
     src: "/GPT/BonhommeStickers.png",
     href: "/projet/GPT",
+    color: "#68a585",
     content: <DummyContent src="/GPT/BonhommeStickers.png" />,
   },
   {
-    category: "Résurgence",
-    title: "Signalétique",
-    src: "/resurgence/miroir_seine5_5.png",
-    href: "/projet/signaletique",
-    content: <DummyContent src="/resurgence/miroir_seine5_5.png" />,
-  },
-  {
-    category: "Pom’Potes",
+    category: "Pom'Potes",
     title: "Extension de Gamme",
-    src: "/pompotes/barquette.png",
+    src: "/pompotes/Barquette-17.png",
     href: "/projet/pompotes",
-    content: <DummyContent src="/pompotes/barquette.png" />,
+    color: "#d8a99d",
+    content: <DummyContent src="/pompotes/Barquette-17.png" />,
   },
   {
-    category: "Création de jeux",
-    title: "Travaux Libres",
-    src: "/jeuCouleur.jpg",
-    href: "/projet/jeux",
-    content: <DummyContent src="jeuCouleur.jpg" />,
+    category: "Workshop",
+    title: "Expérimentation IA",
+    src: "/Workshop/Stickers-06.png",
+    href: "/projet/signaletique",
+    color: "#65a9c6",
+    content: <DummyContent src="/Workshop/Stickers-06.png" />,
   },
   {
-    category: "A la main",
-    title: "Dessin d'observation",
-    src: "/Begude.jpg",
-    href: "/projet/dessin",
-    content: <DummyContent src="/Begude.jpg" />,
+    category: "Clippers",
+    title: "Création d'Expériences",
+    src: "/Clippers/Stickers-04.png",
+    href: "/projet/sketch",
+    color: "#afd274",
+    content: <DummyContent src="/Clippers/Stickers-04.png" />,
+  },
+  {
+    category: "ECE COOK",
+    title: "Association de Cuisine",
+    src: "/EceCook/Logo.png",
+    href: "/projet/typographie",
+    color: "#a95156",
+    content: <DummyContent src="/EceCook/Logo.png" />,
+  },
+  {
+    category: "Capsaï",
+    title: "BrandBook",
+    src: "/Capsaï/Stickers9.png",
+    href: "/projet/workshop",
+    color: "#e49823",
+    content: <DummyContent src="/Capsaï/Stickers9.png" />,
   },
 ];
 
@@ -94,8 +101,7 @@ export default function HomePage() {
       className="flex flex-col"
     >
       {/* Section d'accueil avec effet Parallax */}
-      <div className="h-screen bg-white flex items-center justify-center text-black relative font-Poppins">
-        <Parallax speed={50}>
+      <div className="h-screen bg-white flex items-center justify-center text-black relative font-Poppins -mt-20">
           <div className="relative z-20 text-center">
             <h1 className="text-6xl sm:text-8xl font-extrabold leading-tight tracking-normal">
               Bienvenue sur mon <br />
@@ -105,11 +111,10 @@ export default function HomePage() {
               Auteure : Ludivine Rameaux
             </p>
           </div>
-        </Parallax>
       </div>
 
       {/* SECTION CAROUSEL */}
-      <div id="carousel-section" className="w-full h-full py-20 bg-PinkCustom">
+      <div id="carousel-section" className="w-full h-full py-12 bg-PinkCustom">
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-white font-Montserrat">
           Découvrez mes réalisations :
         </h2>

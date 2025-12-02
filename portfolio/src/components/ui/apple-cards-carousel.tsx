@@ -20,7 +20,8 @@ type CardType = {
   src: string;
   title: string;
   category: string;
-  href: string; // Ajout de la propriété href
+  href: string;
+  color?: string;
   content: React.ReactNode;
 };
 
@@ -67,7 +68,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     <CarouselContext.Provider value={{ currentIndex }}>
       <div className="relative w-full">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+          className="flex w-full overflow-x-scroll overscroll-x-auto py-6 md:py-10 scroll-smooth [scrollbar-width:none]"
           ref={carouselRef}
           onScroll={checkScrollability}
         >
@@ -123,31 +124,53 @@ export const Card = ({
   return (
     // On utilise ici le composant Link pour rediriger vers le lien spécifique.
     <Link href={card.href} legacyBehavior>
-      <a className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10">
-        <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-        <div className="relative z-40 p-8">
+      <a 
+        className="rounded-3xl h-72 w-56 md:h-[28rem] md:w-80 overflow-hidden flex flex-col items-start justify-start relative z-10 border-4 border-white shadow-lg"
+        style={{ backgroundColor: card.color || '#f0f0f0' }}
+      >
+        <div className="relative z-40 p-6 md:p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-white text-sm md:text-base font-medium font-sans text-left"
+            className="text-white text-sm md:text-base font-medium font-sans text-left drop-shadow-lg"
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2"
+            className="text-white text-lg md:text-2xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2 drop-shadow-lg"
           >
             {card.title}
           </motion.p>
         </div>
-        <BlurImage
-          src={card.src}
-          alt={card.title}
-          fill
-          className={cn(
-            "absolute z-10 inset-0",
-            card.src === "/Yepoda/StickersProduit2.png" ? "object-contain" : "object-cover"
+        <div className="absolute bottom-0 left-0 right-0 h-3/4 flex items-center justify-center p-4">
+          {card.src === "/pompotes/Barquette-17.png" ? (
+            <div className="border-[8px] border-white rounded-xl inline-block p-2 bg-transparent rotate-6">
+              <BlurImage
+                src={card.src}
+                alt={card.title}
+                width={280}
+                height={280}
+                className="object-contain drop-shadow-2xl"
+              />
+            </div>
+          ) : card.src === "/Capsaï/Stickers9.png" ? (
+            <BlurImage
+              src={card.src}
+              alt={card.title}
+              width={200}
+              height={200}
+              className="object-contain drop-shadow-2xl"
+            />
+          ) : (
+            <BlurImage
+              src={card.src}
+              alt={card.title}
+              width={320}
+              height={320}
+              className="w-full h-full object-contain drop-shadow-2xl"
+            />
           )}
-        />
+        </div>
       </a>
     </Link>
   );

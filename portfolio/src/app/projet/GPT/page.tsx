@@ -3,25 +3,45 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
-// Composant Carousel avec flèches - une image à la fois
+// Composant Carousel avec flèches - défilement linéaire
 function ArrowCarousel() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const carouselImages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const carouselImages = [1, 2, 3, 4, 5, 6, 7, 8];
 
-    const goToPrevious = () => {
-        setCurrentIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+    const scroll = (direction: 'left' | 'right') => {
+        if (containerRef.current) {
+            const scrollAmount = 400; // Distance de défilement
+            const newPosition = direction === 'left' 
+                ? scrollPosition - scrollAmount 
+                : scrollPosition + scrollAmount;
+            
+            containerRef.current.scrollTo({
+                left: newPosition,
+                behavior: 'smooth'
+            });
+            setScrollPosition(newPosition);
+        }
     };
 
-    const goToNext = () => {
-        setCurrentIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+    const handleScroll = () => {
+        if (containerRef.current) {
+            setScrollPosition(containerRef.current.scrollLeft);
+        }
     };
+
+    const canScrollLeft = scrollPosition > 0;
+    const canScrollRight = containerRef.current 
+        ? scrollPosition < containerRef.current.scrollWidth - containerRef.current.clientWidth - 10
+        : true;
 
     return (
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative w-full">
             {/* Bouton gauche */}
             <button
-                onClick={goToPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                onClick={() => scroll('left')}
+                disabled={!canScrollLeft}
+                className={`absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110 ${!canScrollLeft ? 'opacity-30 cursor-not-allowed' : ''}`}
                 aria-label="Précédent"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 text-[#68A585]">
@@ -29,34 +49,47 @@ function ArrowCarousel() {
                 </svg>
             </button>
 
-            {/* Image principale */}
-            <div className="bg-white p-6 rounded-3xl shadow-xl">
-                <div className="relative w-full h-[500px] md:h-[600px]">
-                    <Image
-                        src={`/GPT/Carousel${carouselImages[currentIndex]}.jpg`}
-                        fill
-                        alt={`Visuel ${carouselImages[currentIndex]}`}
-                        className="object-contain"
-                    />
-                </div>
-                {/* Indicateur de position */}
-                <div className="text-center mt-4">
-                    <span className="font-Poppins text-white text-sm">
-                        {currentIndex + 1} / {carouselImages.length}
-                    </span>
-                </div>
+            {/* Conteneur scrollable */}
+            <div 
+                ref={containerRef}
+                onScroll={handleScroll}
+                className="flex gap-6 overflow-x-auto scroll-smooth py-8 px-4 md:px-16 scrollbar-hide w-full"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+                {carouselImages.map((num) => (
+                    <div 
+                        key={num}
+                        className="flex-shrink-0 w-[250px] md:w-[350px] bg-white p-4 rounded-3xl shadow-xl"
+                    >
+                        <div className="relative w-full h-[350px] md:h-[450px]">
+                            <Image
+                                src={`/GPT/Carousel${num}.jpg`}
+                                fill
+                                alt={`Visuel ${num}`}
+                                className="object-contain"
+                            />
+                        </div>
+                    </div>
+                ))}
             </div>
 
             {/* Bouton droite */}
             <button
-                onClick={goToNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                onClick={() => scroll('right')}
+                disabled={!canScrollRight}
+                className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110 ${!canScrollRight ? 'opacity-30 cursor-not-allowed' : ''}`}
                 aria-label="Suivant"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 text-[#68A585]">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
             </button>
+
+            <style jsx>{`
+                .scrollbar-hide::-webkit-scrollbar {
+                    display: none;
+                }
+            `}</style>
         </div>
     );
 }
@@ -85,7 +118,7 @@ export default function ProjetGPT() {
                             </span>
                         </div>
                         <h1 className="font-Poppins text-5xl md:text-7xl font-bold text-white mb-6">
-                            <div className="leading-tight ml-[3px]">ChatGPT</div>
+                            <div className="leading-tight ml-[-3px]">ChatGPT</div>
                             <span className="text-4xl md:text-5xl text-gray-100 block -mt-1 md:-mt-2">Ton meilleur ami ?</span>
                         </h1>
 
@@ -102,7 +135,7 @@ export default function ProjetGPT() {
                             </div>
                         </div>
                     </div>
-                    <div className="hidden md:block relative w-[45%] h-full">
+                    <div className="hidden md:block relative w-[35%] h-full">
                         <Image
                             src="/GPT/BonhommeStickers.png"
                             fill
@@ -192,7 +225,7 @@ export default function ProjetGPT() {
                         </div>
                         <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                             <Image
-                                src="/GPT/VisuelBD2.png"
+                                src="/GPT/VisuelBD3.png"
                                 width={800}
                                 height={600}
                                 alt="Visuel BD ChatGPT 2"
@@ -200,20 +233,11 @@ export default function ProjetGPT() {
                             />
                         </div>
                     </div>
-                    <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                        <Image
-                            src="/GPT/BD_CompleteGPT.png"
-                            width={1600}
-                            height={600}
-                            alt="Visuel BD Complete ChatGPT"
-                            className="w-full h-auto object-contain"
-                        />
-                    </div>
                 </div>
             </div>
 
             {/* Section Carousel avec flèches */}
-            <div className="py-16 bg-[#68A585]">
+            <div className="py-16 bg-[#68A585] w-full overflow-hidden">
                 <div className="max-w-7xl mx-auto px-8">
                     <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-white">
                         Résultat

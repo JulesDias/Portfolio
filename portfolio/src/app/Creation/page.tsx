@@ -11,7 +11,7 @@ const projects = [
     title: "Typographie Identitaire",
     slug: "Yepoda",
     category: "Yepoda",
-    color: "#d8a99d",
+    color: "#f7c0c5",
     image: "/Yepoda/StickersProduit1.png",
   },
   {
@@ -25,7 +25,8 @@ const projects = [
     title: "Extension de Gamme",
     slug: "pompotes",
     category: "Pom'Potes",
-    color: "#dbbc34",
+
+    color: "#d8a99d",
     image: "/pompotes/Barquette-17.png",
   },
   {
