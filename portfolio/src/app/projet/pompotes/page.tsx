@@ -130,32 +130,32 @@ export default function ProjetPompotes() {
                         La Gamme
                     </h2>
                     <div className="flex flex-col items-center gap-8 mb-16">
-                        {/* Première barquette - alignée à gauche */}
-                        <div className="w-full md:w-2/3 md:ml-0 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        {/* Première barquette - légèrement à gauche avec taille réduite */}
+                        <div className="w-full md:w-1/2 md:translate-x-[-10%] bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
                             <Image
                                 src="/pompotes/Barquette-17.png"
-                                width={800}
-                                height={600}
+                                width={600}
+                                height={450}
                                 alt="Barquette Pom'Potes Fraise"
                                 className="w-full h-auto object-contain"
                             />
                         </div>
-                        {/* Deuxième barquette - alignée à droite */}
-                        <div className="w-full md:w-2/3 md:ml-auto bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        {/* Deuxième barquette - légèrement à droite avec taille réduite */}
+                        <div className="w-full md:w-1/2 md:translate-x-[10%] bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
                             <Image
                                 src="/pompotes/Barquette-18.png"
-                                width={800}
-                                height={600}
+                                width={600}
+                                height={450}
                                 alt="Barquette Pom'Potes Pomme"
                                 className="w-full h-auto object-contain"
                             />
                         </div>
-                        {/* Troisième barquette - alignée à gauche */}
-                        <div className="w-full md:w-2/3 md:ml-0 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                        {/* Troisième barquette - légèrement à gauche avec taille réduite */}
+                        <div className="w-full md:w-1/2 md:translate-x-[-10%] bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
                             <Image
                                 src="/pompotes/Barquette-19.png"
-                                width={800}
-                                height={600}
+                                width={600}
+                                height={450}
                                 alt="Barquette Pom'Potes Poire"
                                 className="w-full h-auto object-contain"
                             />
@@ -240,8 +240,8 @@ export default function ProjetPompotes() {
 
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* MockUp */}
-                        <a href="/pompotes/MockUp Pom'Potes3.png" target="_blank" rel="noopener noreferrer" className="group cursor-pointer">
-                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02]">
+                        <div>
+                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                                 <Image
                                     src="/pompotes/MockUp Pom'Potes3.png"
                                     width={700}
@@ -250,14 +250,14 @@ export default function ProjetPompotes() {
                                     className="w-full h-auto"
                                 />
                             </div>
-                            <p className="text-center mt-4 font-Avenir text-gray-600 group-hover:text-greenCustom transition-colors">
-                                MockUp Produit <span className="text-sm">(cliquer pour agrandir)</span>
+                            <p className="text-center mt-4 font-Avenir text-gray-600">
+                                MockUp Produit
                             </p>
-                        </a>
+                        </div>
 
                         {/* Effet de masse */}
-                        <a href="/pompotes/EffetDeMasse.png" target="_blank" rel="noopener noreferrer" className="group cursor-pointer">
-                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-[1.02]">
+                        <div>
+                            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                                 <Image
                                     src="/pompotes/EffetDeMasse.png"
                                     width={700}
@@ -266,10 +266,10 @@ export default function ProjetPompotes() {
                                     className="w-full h-auto"
                                 />
                             </div>
-                            <p className="text-center mt-4 font-Avenir text-gray-600 group-hover:text-greenCustom transition-colors">
-                                Effet de Masse <span className="text-sm">(cliquer pour agrandir)</span>
+                            <p className="text-center mt-4 font-Avenir text-gray-600">
+                                Effet de Masse
                             </p>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>

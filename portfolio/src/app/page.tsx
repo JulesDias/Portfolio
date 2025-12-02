@@ -2,7 +2,6 @@
 'use client';
 
 import Image from "next/image";
-import { Parallax } from "react-scroll-parallax";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { motion } from "framer-motion";
 
@@ -63,9 +62,9 @@ const data = [
   },
   {
     category: "Clippers",
-    title: "Création d'Expériences",
+    title: "Création d'Expérience",
     src: "/Clippers/Stickers-04.png",
-    href: "/projet/sketch",
+    href: "/projet/clipper",
     color: "#afd274",
     content: <DummyContent src="/Clippers/Stickers-04.png" />,
   },
@@ -73,7 +72,7 @@ const data = [
     category: "ECE COOK",
     title: "Association de Cuisine",
     src: "/EceCook/Logo.png",
-    href: "/projet/typographie",
+    href: "/projet/Ececook",
     color: "#a95156",
     content: <DummyContent src="/EceCook/Logo.png" />,
   },

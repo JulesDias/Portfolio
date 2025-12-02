@@ -37,7 +37,7 @@ const projects = [
     image: "/Workshop/Stickers-06.png",
   },
   {
-    title: "Création d'Expériences",
+    title: "Création d'Expérience",
     slug: "sketch",
     category: "Clippers",
     color: "#afd274",
@@ -45,7 +45,7 @@ const projects = [
   },
   {
     title: "Association de Cuisine",
-    slug: "typographie",
+    slug: "Ececook",
     category: "ECE COOK",
     color: "#a95156",
     image: "/EceCook/Logo.png",
@@ -82,7 +82,7 @@ export default function CreationPage() {
 
       {/* Liste des projets - Rubans colorés */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 lg:px-16 py-8 md:py-12">
-        <div className="flex flex-col gap-6 md:gap-8">
+        <div id="carousel-section" className="flex flex-col gap-6 md:gap-8">
           {projects.map((project, index) => {
             const isEven = index % 2 === 0;
 
