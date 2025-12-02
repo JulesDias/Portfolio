@@ -143,7 +143,10 @@ export const Card = ({
           src={card.src}
           alt={card.title}
           fill
-          className="object-cover absolute z-10 inset-0"
+          className={cn(
+            "absolute z-10 inset-0",
+            card.src === "/Yepoda/StickersProduit2.png" ? "object-contain" : "object-cover"
+          )}
         />
       </a>
     </Link>

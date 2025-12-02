@@ -73,7 +73,7 @@ export default function ProjetPompotes() {
 
                     <div>
                         <h2 className="font-Poppins text-4xl font-bold mb-6 text-gray-900">
-                            Le Concept
+                            Le Projet
                         </h2>
                         <div className="font-Avenir text-gray-700 space-y-4 leading-relaxed">
                             <p>

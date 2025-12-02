@@ -39,9 +39,9 @@ const data = [
   {
     category: "Yepoda",
     title: "Typographie Identitaire",
-    src: "/Yepoda/StickersProduit1.png",
+    src: "/Yepoda/StickersProduit2.png",
     href: "/projet/Yepoda",
-    content: <DummyContent src="/Yepoda/StickersProduit1.png" />,
+    content: <DummyContent src="/Yepoda/StickersProduit2.png" />,
   },
   {
     category: "ChatGPT ton meilleur ami ?",
@@ -51,15 +51,15 @@ const data = [
     content: <DummyContent src="/GPT/BonhommeStickers.png" />,
   },
   {
-    category: "Projet",
-    title: "Résurgence, Signalétique",
+    category: "Résurgence",
+    title: "Signalétique",
     src: "/resurgence/miroir_seine5_5.png",
     href: "/projet/signaletique",
     content: <DummyContent src="/resurgence/miroir_seine5_5.png" />,
   },
   {
     category: "Pom’Potes",
-    title: "Packaging",
+    title: "Extension de Gamme",
     src: "/pompotes/barquette.png",
     href: "/projet/pompotes",
     content: <DummyContent src="/pompotes/barquette.png" />,
@@ -102,7 +102,7 @@ export default function HomePage() {
               <span className="text-PinkCustom">portfolio</span>
             </h1>
             <p className="text-lg mt-6 font-Montserrat text-PinkCustom font-bold">
-              Auteure: Ludivine Rameaux
+              Auteure : Ludivine Rameaux
             </p>
           </div>
         </Parallax>

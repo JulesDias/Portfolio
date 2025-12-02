@@ -15,7 +15,7 @@ function AutoScrollCarousel({ images }: { images: string[] }) {
 
         const scroll = () => {
             if (scrollContainer) {
-                scrollPosition += 0.3; // vitesse réduite
+                scrollPosition += 0.5; // vitesse augmentée
 
                 // Reset au début quand on atteint la moitié (car les images sont dupliquées)
                 if (scrollPosition >= scrollContainer.scrollWidth / 2) {
@@ -50,7 +50,7 @@ function AutoScrollCarousel({ images }: { images: string[] }) {
                         key={index}
                         className="flex-shrink-0 w-[400px] md:w-[500px]"
                     >
-                        <div className="bg-white p-8 rounded-3xl shadow-lg h-[600px] flex items-center justify-center">
+                        <div className="bg-white p-8 rounded-3xl h-[600px] flex items-center justify-center">
                             <Image
                                 src={img}
                                 alt={`Analyse Yepoda ${(index % images.length) + 1}`}
@@ -107,7 +107,7 @@ export default function ProjetYepoda() {
                             </div>
                         </div>
                     </div>
-                    <div className="hidden md:block relative w-[45%] h-full">
+                    <div className="hidden md:block relative w-[18%] h-full">
                         <Image
                             src="/Yepoda/StickersProduit2.png"
                             fill
@@ -177,53 +177,62 @@ export default function ProjetYepoda() {
                     Processus de Création
                 </h2>
 
-                <div className="grid md:grid-cols-3 gap-8 mb-20">
-                    <div className="text-center">
-                        <div className="w-16 h-16 bg-PinkCustom rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="font-Poppins text-white text-2xl font-bold">1</span>
+                <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
+                    {/* Colonne gauche - Points du processus */}
+                    <div className="space-y-32">
+                        <div className="flex gap-6 items-start">
+                            <div className="w-16 h-16 bg-PinkCustom rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="font-Poppins text-white text-2xl font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 className="font-Poppins text-xl font-bold mb-2 text-gray-900">
+                                    Analyse
+                                </h3>
+                                <p className="font-Avenir text-gray-600 leading-relaxed">
+                                    Étude approfondie de l'identité de Yepoda, de son logo et de ses courbes pour définir les bases typographiques.
+                                </p>
+                            </div>
                         </div>
-                        <h3 className="font-Poppins text-xl font-bold mb-3 text-gray-900">
-                            Analyse
-                        </h3>
-                        <p className="font-Avenir text-gray-600 leading-relaxed">
-                            Étude approfondie de l'identité de Yepoda, de son logo et de ses courbes pour définir les bases typographiques.
-                        </p>
+
+                        <div className="flex gap-6 items-start">
+                            <div className="w-16 h-16 bg-PinkCustom rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="font-Poppins text-white text-2xl font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 className="font-Poppins text-xl font-bold mb-2 text-gray-900">
+                                    Création
+                                </h3>
+                                <p className="font-Avenir text-gray-600 leading-relaxed">
+                                    Conception des lettres capitales et minuscules, ainsi que des signes de ponctuation dans Illustrator et Glyphs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex gap-6 items-start">
+                            <div className="w-16 h-16 bg-PinkCustom rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="font-Poppins text-white text-2xl font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 className="font-Poppins text-xl font-bold mb-2 text-gray-900">
+                                    Mise en situation
+                                </h3>
+                                <p className="font-Avenir text-gray-600 leading-relaxed">
+                                    Test de la typographie sur différents supports pour en valider la pertinence visuelle et fonctionnelle.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="text-center">
-                        <div className="w-16 h-16 bg-PinkCustom rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="font-Poppins text-white text-2xl font-bold">2</span>
-                        </div>
-                        <h3 className="font-Poppins text-xl font-bold mb-3 text-gray-900">
-                            Création
-                        </h3>
-                        <p className="font-Avenir text-gray-600 leading-relaxed">
-                            Conception des lettres capitales et minuscules, ainsi que des signes de ponctuation dans Illustrator et Glyphs.
-                        </p>
+                    {/* Colonne droite - Image */}
+                    <div className="rounded-2xl overflow-hidden shadow-lg">
+                        <Image
+                            src="/Yepoda/RechercheTypoSketch.png"
+                            width={1600}
+                            height={900}
+                            alt="Recherches typographiques Yepoda"
+                            className="w-full h-auto"
+                        />
                     </div>
-
-                    <div className="text-center">
-                        <div className="w-16 h-16 bg-PinkCustom rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span className="font-Poppins text-white text-2xl font-bold">3</span>
-                        </div>
-                        <h3 className="font-Poppins text-xl font-bold mb-3 text-gray-900">
-                            Mise en situation
-                        </h3>
-                        <p className="font-Avenir text-gray-600 leading-relaxed">
-                            Test de la typographie sur différents supports pour en valider la pertinence visuelle et fonctionnelle.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Recherches typographiques */}
-                <div className="w-full md:w-2/3 mx-auto rounded-2xl overflow-hidden shadow-lg">
-                    <Image
-                        src="/Yepoda/RechercheTypoSketch.png"
-                        width={1600}
-                        height={900}
-                        alt="Recherches typographiques Yepoda"
-                        className="w-full h-auto"
-                    />
                 </div>
             </div>
 
@@ -235,10 +244,10 @@ export default function ProjetYepoda() {
                     </h2>
                     <div className="bg-white p-12 rounded-2xl shadow-xl">
                         <p className="font-Yepoda text-2xl md:text-3xl text-gray-800 leading-relaxed text-center">
-                            Yepoda s'inspire de la nature et du quotidien.<br />
-                            Les formes sont simples, les couleurs apaisantes, les gestes sincères.<br />
-                            Cette typographie reflète un univers équilibré, entre énergie et douceur.<br />
-                            Elle respire, elle sourit, elle invite à prendre le temps.<br />
+                            Yepoda s'inspire de la nature et du quotidien.
+                            Les formes sont simples, les couleurs apaisantes, les gestes sincères.
+                            Cette typographie reflète un univers équilibré, entre énergie et douceur.
+                            Elle respire, elle sourit, elle invite à prendre le temps.
                             Une écriture lumineuse, pensée pour célébrer la simplicité et le bien-être.
                         </p>
                     </div>
@@ -250,32 +259,32 @@ export default function ProjetYepoda() {
                 <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
                     L'Alphabet Complet
                 </h2>
-                <div className="bg-white p-12 rounded-2xl shadow-lg">
-                    <div className="space-y-6">
+                <div className="bg-white p-6 md:p-12 rounded-2xl shadow-lg">
+                    <div className="space-y-8">
                         <div className="text-center">
-                            <h3 className="font-Poppins text-xl font-bold mb-4 text-gray-900">Majuscules</h3>
-                            <p className="font-Yepoda text-5xl md:text-6xl text-gray-800 tracking-wider">
+                            <h3 className="font-Poppins text-lg md:text-xl font-bold mb-4 text-gray-900">Majuscules</h3>
+                            <p className="font-Yepoda text-3xl md:text-5xl lg:text-6xl text-gray-800 tracking-wider break-words">
                                 ABCDEFGHIJKLMNOPQRSTUVWXYZ
                             </p>
                         </div>
 
                         <div className="text-center">
-                            <h3 className="font-Poppins text-xl font-bold mb-4 text-gray-900">Minuscules</h3>
-                            <p className="font-Yepoda text-5xl md:text-6xl text-gray-800 tracking-wider">
+                            <h3 className="font-Poppins text-lg md:text-xl font-bold mb-4 text-gray-900">Minuscules</h3>
+                            <p className="font-Yepoda text-3xl md:text-5xl lg:text-6xl text-gray-800 tracking-wider break-words">
                                 abcdefghijklmnopqrstuvwxyz
                             </p>
                         </div>
 
                         <div className="text-center">
-                            <h3 className="font-Poppins text-xl font-bold mb-4 text-gray-900">Chiffres & Ponctuation</h3>
-                            <p className="font-Yepoda text-5xl md:text-6xl text-gray-800 tracking-wider">
+                            <h3 className="font-Poppins text-lg md:text-xl font-bold mb-4 text-gray-900">Chiffres & Ponctuation</h3>
+                            <p className="font-Yepoda text-3xl md:text-5xl lg:text-6xl text-gray-800 tracking-wider break-words">
                                 0123456789 .,;:!?'"()-_#*@+%
                             </p>
                         </div>
                         <div className="text-center">
-                            <h3 className="font-Poppins text-xl font-bold mb-4 text-gray-900">Caractères Spéciaux</h3>
-                            <p className="font-Yepoda text-5xl md:text-6xl text-gray-800 tracking-wider">
-                                ÀÉÈÊËÎÏÔÙÛÜÇ
+                            <h3 className="font-Poppins text-lg md:text-xl font-bold mb-4 text-gray-900">Caractères Spéciaux</h3>
+                            <p className="font-Yepoda text-3xl md:text-5xl lg:text-6xl text-gray-800 tracking-wider break-words">
+                                ÀÉÈÊËÎÏÔÙÛÜÇàéèêëîïôùûüç
                             </p>
                         </div>
                     </div>

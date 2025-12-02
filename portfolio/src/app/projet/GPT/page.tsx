@@ -22,12 +22,12 @@ export default function ProjetGPT() {
                 <div className="absolute inset-0 flex items-end justify-between px-8 md:px-16 max-w-7xl mx-auto">
                     <div className="z-10 max-w-xl pb-12">
                         <div className="mb-6 ml-[3px]">
-                            <span className="text-[#231F20] font-Avenir text-sm uppercase tracking-wider font-semibold">
+                            <span className="text-white font-Avenir text-sm uppercase tracking-wider font-semibold">
                                 Fanzine • Printemps 2025
                             </span>
                         </div>
                         <h1 className="font-Poppins text-5xl md:text-7xl font-bold text-white mb-6">
-                            <div className="leading-tight">ChatGPT</div>
+                            <div className="leading-tight ml-[3px]">ChatGPT</div>
                             <span className="text-4xl md:text-5xl text-gray-100 block -mt-1 md:-mt-2">Ton meilleur ami ?</span>
                         </h1>
 
@@ -83,12 +83,21 @@ export default function ProjetGPT() {
                                 À travers notre sujet, <strong>« ChatGPT : ton meilleur ami ? »</strong>, l'objectif était de créer un support pédagogique et visuel, destiné à sensibiliser les collégiens aux dangers et dérives liés à l'usage de l'intelligence artificielle.
                             </p>
                             <p>
-                                Le fanzine se compose de deux volets complémentaires : un livret sous forme BD et un poster dans le même univers graphique.
+                                Le fanzine se compose de deux volets complémentaires : un livret sous forme BD et au dos un poster dans le même univers graphique.
                             </p>
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-[#68A585]/20 to-[#20946E]/30 p-8 rounded-2xl">
+                    <div className="bg-gradient-to-br from-[#68A585]/20 to-[#20946E]/30 p-8 rounded-2xl relative overflow-visible">
+                        <div className="absolute -top-8 -right-8 w-32 h-32 rotate-12 z-10">
+                            <Image
+                                src="/GPT/imageBulleContext.png"
+                                width={200}
+                                height={200}
+                                alt="Bulle contextuelle"
+                                className="w-full h-full object-contain drop-shadow-lg"
+                            />
+                        </div>
                         <h3 className="font-Poppins text-2xl font-bold mb-4 text-gray-900">
                             Démarche Créative
                         </h3>
@@ -186,25 +195,6 @@ export default function ProjetGPT() {
                         <p className="font-Avenir text-gray-600 leading-relaxed">
                             Mise en page expérimentale et impression en risographie avec contraintes techniques de 3 couleurs.
                         </p>
-                    </div>
-                </div>
-            </div>
-
-            {/* Section Bulles Contextuelles */}
-            <div className="bg-gradient-to-br from-gray-50 to-white py-20">
-                <div className="max-w-7xl mx-auto px-8">
-                    <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
-                        Éléments Visuels
-                    </h2>
-
-                    <div className="rounded-2xl overflow-hidden shadow-lg w-3/4 mx-auto">
-                        <Image
-                            src="/GPT/imageBulleContext.png"
-                            width={1400}
-                            height={1000}
-                            alt="Bulle contextuelle 1"
-                            className="w-full h-auto"
-                        />
                     </div>
                 </div>
             </div>
