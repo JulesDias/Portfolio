@@ -38,11 +38,11 @@ const projects = [
     className: "md:col-span-1",
   },
   {
-    title: "La liaison",
-    category: "Parfum",
-    description: "Projet de conception de parfum",
-    image: "/chambre.jpg",
-    href: "/projet/chambre",
+    title: "Fanzine, ChatGPT ton meilleur ami ?",
+    category: "Fanzine",
+    description: "Projet de conception de fanzine",
+    image: "/GPT/Illustration1Bonhomme.png",
+    href: "/projet/GPT",
     className: "md:col-span-1",
   },
   {

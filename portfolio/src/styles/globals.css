@@ -39,6 +39,11 @@ body {
   src: url('/fonts/Montserrat-VariableFont_wght.ttf');
 }
 
+@font-face{
+  font-family: 'Yepoda';
+  src: url('/fonts/Yepoda-Regular.otf');
+}
+
 .text-stroke {
   /* Initialisation de la variable */
   --progress: 0;

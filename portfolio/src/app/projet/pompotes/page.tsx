@@ -18,23 +18,23 @@ export default function ProjetPompotes() {
     return (
         <div>
             {/* Hero Section avec image principale */}
-            <div className="relative w-full h-[70vh] bg-[#e9e1db] overflow-hidden">
+            <div className="relative w-full h-[70vh] bg-[#D8A99D] overflow-hidden">
                 <div className="absolute inset-0 flex items-end justify-between px-8 md:px-16 max-w-7xl mx-auto">
                     <div className="z-10 max-w-xl pb-12">
                         <div className="mb-6 ml-[3px]">
-                            <span className="text-[#D0BBAD] font-Avenir text-sm uppercase tracking-wider font-semibold">
+                            <span className="text-white font-Avenir text-sm uppercase tracking-wider font-semibold">
                                 Packaging • Automne 2023
                             </span>
                         </div>
-                        <h1 className="font-Poppins text-5xl md:text-7xl font-bold text-gray-900 mb-6">
+                        <h1 className="font-Poppins text-5xl md:text-7xl font-bold text-white mb-6">
                             <div className="leading-tight">Pom'Potes</div>
-                            <span className="text-4xl md:text-5xl text-gray-700 block -mt-1 md:-mt-2">Les Barquettes</span>
+                            <span className="text-4xl md:text-5xl text-white block -mt-1 md:-mt-2">Les Barquettes</span>
                         </h1>
 
-                        <p className="font-Avenir text-lg text-gray-600 mb-8 leading-relaxed">
+                        <p className="font-Avenir text-lg text-white mb-8 leading-relaxed">
                             Extension de gamme vers le goûter solide : des biscuits fourrés aux fruits qui conservent l'ADN fruité et familial de Pom'Potes.
                         </p>
-                        <div className="flex gap-4 font-Avenir text-sm text-gray-600">
+                        <div className="flex gap-4 font-Avenir text-sm text-white">
                             <div>
                                 <span className="font-semibold">Durée:</span> 3 mois
                             </div>
@@ -56,7 +56,7 @@ export default function ProjetPompotes() {
             </div>
 
             {/* Section mobile hero image */}
-            <div className="md:hidden w-full py-10 bg-[#e9dfd5]">
+            <div className="md:hidden w-full py-10 bg-[#D8A99D]">
                 <div className="relative w-full h-[400px]">
                     <Image
                         src="/pompotes/MockUpPompotesVisuel.png"
@@ -85,11 +85,11 @@ export default function ProjetPompotes() {
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-greenCustom/10 to-OtherGreenCustom/30 p-8 rounded-2xl">
-                        <h3 className="font-Poppins text-2xl font-bold mb-4 text-gray-900">
+                    <div className="bg-[#D8A99D] p-8 rounded-2xl">
+                        <h3 className="font-Poppins text-2xl font-bold mb-4 text-white">
                             Pourquoi Pom'Potes ?
                         </h3>
-                        <div className="font-Avenir text-gray-700 space-y-3 leading-relaxed">
+                        <div className="font-Avenir text-white space-y-3 leading-relaxed">
                             <p>
                                 J'ai choisi <strong>Pom'Potes</strong> pour son univers coloré et son identité visuelle forte : les fruits, la mascotte, le paysage.
                             </p>
@@ -124,9 +124,9 @@ export default function ProjetPompotes() {
             </div>
 
             {/* Section Visuels produits */}
-            <div id="carousel-section" className="bg-gray-50 py-20">
+            <div id="carousel-section" className="bg-[#D8A99D] py-20">
                 <div className="max-w-7xl mx-auto px-8">
-                    <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+                    <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-white">
                         La Gamme
                     </h2>
                     <div className="flex flex-col items-center gap-8 mb-16">
@@ -275,9 +275,9 @@ export default function ProjetPompotes() {
             </div>
 
             {/* Section finale - Points clés */}
-            <div className="bg-gradient-to-br from-greenCustom/10 to-OtherGreenCustom/20 py-20">
+            <div className="bg-[#D8A99D] py-20">
                 <div className="max-w-7xl mx-auto px-8">
-                    <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+                    <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-white">
                         L'ADN Pom'Potes Préservé
                     </h2>
 
@@ -333,7 +333,7 @@ export default function ProjetPompotes() {
 
                     {/* Logiciels utilisés */}
                     <div className="mt-12 text-center">
-                        <p className="font-Avenir text-gray-600">
+                        <p className="font-Avenir text-white">
                             <span className="font-semibold">Logiciels utilisés :</span> Adobe Illustrator & Photoshop
                         </p>
                     </div>

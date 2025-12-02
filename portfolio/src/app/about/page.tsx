@@ -26,7 +26,7 @@ export default function About() {
                 Ludivine Rameaux
               </h1>
               <h2 className="font-Poppins text-2xl md:text-3xl text-white mb-6">
-                Designer graphique d'identité visuelle
+                Designer graphique & identité visuelle
               </h2>
               <p className="font-Avenir text-lg text-white leading-relaxed mb-6">
                 Passionnée par le design graphique, avec une sensibilité particulière pour l'édition et le packaging, je recherche un stage de fin d'études à partir de juin 2026 afin d'approfondir ma pratique et contribuer à des projets porteurs de sens.

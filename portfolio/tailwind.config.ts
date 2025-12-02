@@ -25,6 +25,7 @@ const config: Config = {
         Montserrat: ["Montserrat", "sans-serif"],
         Poppins: ["Poppins", "sans-serif"],
         Avenir: ["Avenir", "sans-serif"],
+        Yepoda: ["Yepoda", "sans-serif"],
       },
     },
   },
