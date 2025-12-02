@@ -3,56 +3,60 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
-// Composant Carousel Auto-Scroll
-function AutoScrollCarousel() {
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const carouselImages = [1, 2, 3, 4, 5, 6, 7, 8];
-    const duplicatedImages = [...carouselImages, ...carouselImages];
+// Composant Carousel avec flèches - une image à la fois
+function ArrowCarousel() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const carouselImages = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    useEffect(() => {
-        const scrollContainer = scrollRef.current;
-        if (!scrollContainer) return;
+    const goToPrevious = () => {
+        setCurrentIndex((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+    };
 
-        let scrollPosition = 0;
-        const scrollSpeed = 0.5;
-
-        const scroll = () => {
-            scrollPosition += scrollSpeed;
-            const maxScroll = scrollContainer.scrollWidth / 2;
-
-            if (scrollPosition >= maxScroll) {
-                scrollPosition = 0;
-            }
-
-            scrollContainer.scrollLeft = scrollPosition;
-        };
-
-        const intervalId = setInterval(scroll, 16);
-
-        return () => clearInterval(intervalId);
-    }, []);
+    const goToNext = () => {
+        setCurrentIndex((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+    };
 
     return (
-        <div className="overflow-hidden">
-            <div
-                ref={scrollRef}
-                className="flex gap-6 overflow-x-hidden"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        <div className="relative max-w-4xl mx-auto">
+            {/* Bouton gauche */}
+            <button
+                onClick={goToPrevious}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Précédent"
             >
-                {duplicatedImages.map((num, index) => (
-                    <div key={index} className="flex-shrink-0 w-[250px] md:w-[320px]">
-                        <div className="bg-white p-4 rounded-2xl shadow-md h-[320px] md:h-[400px]">
-                            <Image
-                                src={`/GPT/Carousel${num}.jpg`}
-                                width={600}
-                                height={800}
-                                alt={`Visuel ${num}`}
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-                    </div>
-                ))}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 text-[#68A585]">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+
+            {/* Image principale */}
+            <div className="bg-white p-6 rounded-3xl shadow-xl">
+                <div className="relative w-full h-[500px] md:h-[600px]">
+                    <Image
+                        src={`/GPT/Carousel${carouselImages[currentIndex]}.jpg`}
+                        fill
+                        alt={`Visuel ${carouselImages[currentIndex]}`}
+                        className="object-contain"
+                    />
+                </div>
+                {/* Indicateur de position */}
+                <div className="text-center mt-4">
+                    <span className="font-Poppins text-white text-sm">
+                        {currentIndex + 1} / {carouselImages.length}
+                    </span>
+                </div>
             </div>
+
+            {/* Bouton droite */}
+            <button
+                onClick={goToNext}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                aria-label="Suivant"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 text-[#68A585]">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
         </div>
     );
 }
@@ -208,14 +212,14 @@ export default function ProjetGPT() {
                 </div>
             </div>
 
-            {/* Section Carousel Auto-Scroll */}
+            {/* Section Carousel avec flèches */}
             <div className="py-16 bg-[#68A585]">
                 <div className="max-w-7xl mx-auto px-8">
                     <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-                        Exploration Visuelle
+                        Résultat
                     </h2>
                 </div>
-                <AutoScrollCarousel />
+                <ArrowCarousel />
             </div>
 
             {/* Section Processus */}
@@ -309,13 +313,26 @@ export default function ProjetGPT() {
                             <h3 className="font-Poppins text-2xl font-bold mb-6 text-gray-900">
                                 La Mascotte
                             </h3>
-                            <Image
-                                src="/GPT/Illustration2Bonhommes.png"
-                                width={400}
-                                height={400}
-                                alt="Stickers mascotte ChatGPT"
-                                className="w-full h-auto"
-                            />
+                            <div className="grid grid-cols-2 gap-6 w-full">
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <Image
+                                        src="/GPT/Illustration1Bonhomme.png"
+                                        width={400}
+                                        height={400}
+                                        alt="Stickers mascotte ChatGPT 1"
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
+                                <div className="w-full h-full flex items-center justify-center -translate-y-[25px]">
+                                    <Image
+                                        src="/GPT/IllustrationBonhomme2.png"
+                                        width={400}
+                                        height={400}
+                                        alt="Stickers mascotte ChatGPT 2"
+                                        className="w-full h-full object-contain scale-[1.85]"
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
 

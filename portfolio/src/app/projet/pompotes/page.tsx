@@ -23,7 +23,7 @@ export default function ProjetPompotes() {
                     <div className="z-10 max-w-xl pb-12">
                         <div className="mb-6 ml-[3px]">
                             <span className="text-white font-Avenir text-sm uppercase tracking-wider font-semibold">
-                                Packaging • Automne 2023
+                                Extension de Gamme • Automne 2023
                             </span>
                         </div>
                         <h1 className="font-Poppins text-5xl md:text-7xl font-bold text-white mb-6">
