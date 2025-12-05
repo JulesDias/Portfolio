@@ -126,7 +126,7 @@ export default function ProjetClipper() {
             </div>
 
             {/* Sticker Avant - En haut à droite - Caché sur mobile */}
-            <div className="hidden md:block absolute -top-20 right-4 lg:-top-40 lg:right-20 w-64 lg:w-[450px] z-30">
+            <div className="hidden md:block absolute -top-20 right-[-6px] lg:-top-40 lg:right-10 w-64 lg:w-[450px] z-30">
               <div className="transform rotate-[-8deg]">
                 <Image
                   src="/Clippers/Visu3dAvant.png"
@@ -184,7 +184,7 @@ export default function ProjetClipper() {
           </div>
           <div className="bg-white rounded-xl p-2 md:p-3 shadow-lg hover:shadow-xl transition-shadow md:w-[calc(25%-1rem)]">
             <Image
-              src="/Clippers/UniversClippers3.png"
+              src="/Clippers/UniversClippers4.webp"
               width={300}
               height={200}
               alt="Univers Clipper 3"
@@ -207,25 +207,38 @@ export default function ProjetClipper() {
       <div className="bg-gradient-to-br from-[#afd274]/10 to-[#8db858]/20 py-20">
         <div className="max-w-7xl mx-auto px-8">
           <h2 className="font-Poppins text-4xl md:text-5xl font-bold text-center mb-8 text-gray-900">
-            Le Kit
+            Les Illustrations du Kit
           </h2>
           <p className="font-Avenir text-gray-700 text-center max-w-3xl mx-auto mb-12 leading-relaxed">
             Le Kit contient trois tubes à essai avec les différents thés, un autre tube servant de boule à thé en verre ainsi qu'un bécher en tant que tasse.
           </p>
 
-          {/* Images LeKit - Affichage horizontal resserré */}
-          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
-            {[1, 2, 3, 4].map((num) => (
-              <div key={num} className="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-shadow">
-                <Image
-                  src={`/Clippers/LeKit${num}.png`}
-                  width={250}
-                  height={350}
-                  alt={`Le Kit ${num}`}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-            ))}
+          {/* Container avec les deux sections côte à côte */}
+          <div className="flex justify-center items-center gap-[10px]">
+            {/* Image Devanture Packaging */}
+            <div className="flex-shrink-0">
+              <Image
+                src="/Clippers/DevanturePackaging.png"
+                width={600}
+                height={350}
+                alt="Devanture Packaging"
+                className="h-[350px] w-auto object-contain"
+              />
+            </div>
+            {/* Images LeKit */}
+            <div className="flex justify-center items-center gap-[10px]">
+              {[1, 2, 3, 4].map((num) => (
+                <div key={num} className={`flex-shrink-0 ${num === 1 ? 'mr-[25px]' : ''}`}>
+                  <Image
+                    src={`/Clippers/LeKit${num}.png`}
+                    width={250}
+                    height={350}
+                    alt={`Le Kit ${num}`}
+                    className="h-[350px] w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

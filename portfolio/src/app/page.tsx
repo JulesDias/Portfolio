@@ -80,7 +80,7 @@ const data = [
     category: "Capsaï",
     title: "BrandBook",
     src: "/Capsaï/Stickers9.png",
-    href: "/projet/workshop",
+    href: "/projet/capsai",
     color: "#e49823",
     content: <DummyContent src="/Capsaï/Stickers9.png" />,
   },

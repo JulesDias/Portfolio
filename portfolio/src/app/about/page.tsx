@@ -110,16 +110,6 @@ export default function About() {
 
             <div className="bg-white p-6 rounded-xl shadow-md">
               <h3 className="font-Poppins text-xl font-bold text-gray-900 mb-2">
-                Fragment d'Art - Stage
-              </h3>
-              <p className="font-Avenir text-gray-600 mb-4">Juin 2023</p>
-              <p className="font-Avenir text-gray-700 leading-relaxed">
-                Création de motifs et de lignes avec de la mosaïque pour réaliser un aplat. Reproduction minutieuse du pattern à plusieurs reprises.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="font-Poppins text-xl font-bold text-gray-900 mb-2">
                 Prisma Media - Stage d'observation
               </h3>
               <p className="font-Avenir text-gray-600 mb-4">Juin 2019 • Gennevilliers</p>
@@ -136,7 +126,6 @@ export default function About() {
         <h2 className="font-Poppins text-4xl font-bold mb-12 text-gray-900">
           Missions & Engagements
         </h2>
-
         <div className="space-y-6">
           <div className="border-l-4 border-PinkCustom pl-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
@@ -161,7 +150,6 @@ export default function About() {
               Ambassadrice et représentante de l'école à différents évènements, rédaction d'articles, transmission des valeurs de Strate auprès des futurs étudiants.
             </p>
           </div>
-
           <div className="border-l-4 border-PinkCustom pl-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
               <h3 className="font-Poppins text-xl font-bold text-gray-900">
