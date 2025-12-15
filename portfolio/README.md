@@ -32,7 +32,6 @@ Dépendances dans `package.json` :
 - **Animations** : `motion` (v12) + `react-scroll-parallax`
 - **Icônes** : `@tabler/icons-react`, `react-icons`
 
-⚠️ **Incohérence détectée** : tout le code importe `from "framer-motion"` alors que `package.json` déclare la dépendance `"motion"`. Pour corriger, soit installer `framer-motion`, soit remplacer tous les imports par `"motion"`.
 
 ## 🎨 UI / Composants
 
