@@ -1,183 +1,117 @@
 # Portfolio de Ludivine Rameaux
 
-Portfolio professionnel présentant les projets de design et créations de Ludivine Rameaux, étudiante à Strate École de Design.
+Portfolio professionnel présentant les projets de design et créations de Ludivine Rameaux (Strate École de Design).
 
 ## 📋 Description
 
-Site web portfolio moderne développé avec Next.js 15, présentant différents projets de design incluant :
-- **Pom'Potes** - Extension de gamme packaging (Automne 2023)
-- **Résurgence** - Projet de signalétique
-- **Sketches & Typographie** - Créations graphiques
-- Galerie de projets divers (jeux, dessins, photographie)
+Site web développé avec Next.js (App Router) qui présente des projets sous forme de pages dédiées, avec carrousels/scroll horizontaux, animations et une page “Créations” listant les projets.
 
-## 🚀 Technologies
+## 🧭 Pages & routes
 
-- **Framework** : Next.js 15 (App Router)
-- **React** : 19.0
-- **TypeScript** : Configuration stricte
-- **Styling** : Tailwind CSS avec palette personnalisée
-- **Animations** : Motion (Framer Motion), React Scroll Parallax
-- **UI Components** : Mantine Core, composants personnalisés
-- **Icônes** : Tabler Icons, React Icons
+Routes présentes dans `src/app/` (la casse compte) :
 
-### Palette de couleurs personnalisée
-- `greenCustom`: #c1cd88
-- `DarkGreenCustom`: #ACBD83
-- `OtherGreenCustom`: #dfe4c8
-- `ClearBlueCustom`: #7DCCDB
+- **`/`** : page d'accueil (hero + carousel Apple présentant 7 projets)
+- **`/about`** : page profil (bio, formation, expériences, compétences) + vidéo `DroneViewStrate.mp4`
+- **`/Creation`** : page listant les projets sous forme de rubans cliquables colorés
+- **`/projet/Yepoda`** : typographie identitaire pour Yepoda
+- **`/projet/GPT`** : fanzine "ChatGPT, ton meilleur ami ?"
+- **`/projet/pompotes`** : extension de gamme packaging Pom'Potes
+- **`/projet/signaletique`** : signalétique Résurgence (île Seguin)
+- **`/projet/clipper`** : kit expérimental thé Clipper
+- **`/projet/Ececook`** : kakémono + bannière LinkedIn pour association cuisine
+- **`/projet/capsai`** : brandbook marque de sauce pimentée Capsaï
 
-### Typographies
-- **Titres** : Poppins (semi-bold), Kiera Display, Cinematografica
-- **Texte** : Avenir, Montserrat Variable
+Une page 404 personnalisée est définie dans `src/app/not-found.tsx`.
+
+## 🚀 Stack
+
+Dépendances dans `package.json` :
+
+- **Framework** : Next.js 15 + React 19 + TypeScript (strict)
+- **Styling** : Tailwind CSS + `tailwind-merge` + `clsx` (via helper `cn()` dans `src/lib/utils.ts`)
+- **Animations** : `motion` (v12) + `react-scroll-parallax`
+- **Icônes** : `@tabler/icons-react`, `react-icons`
+
+⚠️ **Incohérence détectée** : tout le code importe `from "framer-motion"` alors que `package.json` déclare la dépendance `"motion"`. Pour corriger, soit installer `framer-motion`, soit remplacer tous les imports par `"motion"`.
+
+## 🎨 UI / Composants
+
+- **Header.tsx** : header sticky qui se masque au scroll dès qu'un élément `#carousel-section` est présent sur la page
+- **Footer.tsx** : pied de page avec liens réseaux sociaux
+- **ClientParallaxWrapper.tsx** : wrapper client-side pour `<ParallaxProvider>` de `react-scroll-parallax`
+- **ui/apple-cards-carousel.tsx** : carousel "Apple-style" utilisé sur la page d'accueil
+- **ui/scrolling-carousel.tsx** : carousel auto-scroll infini (utilisé sur `/projet/signaletique`)
+- **ui/bento-grid.tsx** : grille Bento (non utilisée actuellement sur `/Creation` qui affiche des rubans)
+
+## 🎨 Couleurs & typographies
+
+Palette Tailwind (voir `tailwind.config.ts`) :
+
+- `greenCustom` `DarkGreenCustom` `OtherGreenCustom` `ClearBlueCustom` `PinkCustom`
+
+Polices chargées via `@font-face` dans `src/styles/globals.css` depuis `public/fonts/` (Poppins, Montserrat, Kiera, Cinematografica, Yepoda, etc.).
 
 ## 📦 Installation
 
 ```bash
-# Cloner le projet
-git clone [url-du-repo]
-
-# Installer les dépendances
 npm install
-
-# Lancer le serveur de développement
 npm run dev
 ```
 
-Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
+Le site est accessible sur http://localhost:3000
 
-## 🛠️ Scripts disponibles
+## 🛠️ Scripts
 
 ```bash
-npm run dev      # Lance le serveur de développement
-npm run build    # Compile le projet pour la production
-npm run start    # Lance le serveur de production
-npm run lint     # Vérifie le code avec ESLint
+npm run dev
+npm run build
+npm run start
+npm run lint
 ```
 
-## 📁 Structure du projet
+## 📁 Structure (résumé)
 
 ```
 portfolio/
-├── src/
-│   ├── app/
-│   │   ├── page.tsx              # Page d'accueil avec carousel
-│   │   ├── about/                # Page à propos
-│   │   ├── Creation/             # Galerie Bento Grid
-│   │   └── projet/
-│   │       ├── pompotes/         # Projet packaging Pom'Potes
-│   │       ├── signaletique/     # Projet Résurgence
-│   │       ├── sketch/
-│   │       └── typographie/
-│   ├── components/
-│   │   ├── Header.tsx            # Navigation avec auto-hide
-│   │   ├── Footer.tsx            # Pied de page
-│   │   ├── ClientParallaxWrapper.tsx
-│   │   └── ui/                   # Composants UI réutilisables
-│   ├── styles/
-│   │   └── globals.css           # Styles globaux + @font-face
-│   └── lib/
-│       └── utils.ts              # Utilitaires
-├── public/
-│   ├── fonts/                    # Polices personnalisées
-│   ├── pompotes/                 # Images projet Pom'Potes
-│   └── resurgence/               # Images projet Résurgence
-├── tailwind.config.ts            # Configuration Tailwind
-└── next.config.ts                # Configuration Next.js
+  src/
+    app/
+      page.tsx about/ Creation/ projet/ not-found.tsx layout.tsx
+    components/
+      Header.tsx Footer.tsx ClientParallaxWrapper.tsx
+      ui/apple-cards-carousel.tsx ui/bento-grid.tsx ui/scrolling-carousel.tsx
+    styles/globals.css
+    lib/utils.ts
+  public/
+    fonts/ (Poppins, Montserrat, Kiera, Cinematografica, Yepoda, etc.)
+    Yepoda/ GPT/ EceCook/ Clippers/ Capsaï/ Workshop/ pompotes/ resurgence/
+    DroneViewStrate.mp4 + images diverses
+  tailwind.config.ts
+  next.config.ts
+  package.json
 ```
 
-## 🎨 Fonctionnalités
+## 🖼️ Next/Image (domaines autorisés)
 
-- **Design responsive** : Optimisé pour mobile, tablette et desktop
-- **Navigation intelligente** : Header qui se cache au scroll quand un carousel est présent
-- **Animations fluides** : Transitions et effets de parallaxe
-- **Galerie Bento Grid** : Mise en page moderne pour les projets
-- **Images optimisées** : Utilisation de Next.js Image pour la performance
-- **Mode sombre** : Intégration du toggle dark mode
+`next.config.ts` autorise notamment `images.unsplash.com` et `assets.aceternity.com`.
 
-## 🖼️ Pages principales
+## 🔧 Ajouter / modifier un projet
+## ⚠️ Points d'attention
 
-### Accueil (`/`)
-Carousel Apple-style avec présentation des projets phares
+1. **Import `framer-motion` vs dépendance `motion`** : tout le code fait `import { motion } from "framer-motion"` alors que `package.json` déclare `"motion": "^12.0.11"`. Cela fonctionnera si `motion` ré-exporte tout de `framer-motion` ou si un alias existe, sinon installer `framer-motion` explicitement.
+2. **Slug incohérent dans `/Creation`** : le dernier projet (Capsaï) a `slug: "workshop"` alors que la route est `/projet/capsai`. Corriger le slug à `"capsai"` dans `src/app/Creation/page.tsx`.
+3. **Dépendances inutilisées** : `@mantine/core`, `@mantine/hooks`, `react-toggle-dark-mode` sont présentes dans `package.json` mais jamais importées dans le code.
+## ⚠️ Notes dev
 
-### À propos (`/about`)
-Présentation de Ludivine avec vidéo responsive
-
-### Créations (`/Creation`)
-Galerie Bento Grid affichant 9 projets avec effets hover
-
-### Projets
-- `/projet/pompotes` - Extension packaging Pom'Potes
-- `/projet/signaletique` - Signalétique Résurgence
-- `/projet/sketch` - Dessins et croquis
-- `/projet/typographie` - Créations typographiques
-
-## 📝 Configuration des fonts
-
-Les polices sont chargées via `@font-face` dans `globals.css` et référencées dans `tailwind.config.ts` :
-
-```css
-/* globals.css */
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins-SemiBold.ttf');
-}
-```
-
-```typescript
-// tailwind.config.ts
-fontFamily: {
-  Poppins: ['Poppins', 'sans-serif'],
-  Avenir: ['Avenir', 'Montserrat', 'sans-serif'],
-  // ...
-}
-```
-
-## 🚢 Déploiement
-
-### Vercel (recommandé)
-Le projet est optimisé pour un déploiement sur Vercel :
-
-1. Connecter le repository GitHub à Vercel
-2. Configurer les variables d'environnement si nécessaire
-3. Déployer automatiquement à chaque push
-
-```bash
-# Ou utiliser Vercel CLI
-npm i -g vercel
-vercel
-```
-
-### Autre hébergeur
-```bash
-npm run build
-npm run start
-```
-
-## 🔧 Personnalisation
-
-### Modifier les couleurs
-Éditer `tailwind.config.ts` :
-```typescript
-colors: {
-  greenCustom: '#c1cd88',
-  // Ajouter vos couleurs
-}
-```
-
-### Ajouter un projet
-1. Créer un dossier dans `src/app/projet/[nom-projet]/`
-2. Ajouter `page.tsx` avec le contenu
-3. Placer les images dans `public/[nom-projet]/`
-4. Mettre à jour la page `Creation` avec la nouvelle carte
-
-## 📄 License
-
-Projet personnel - Tous droits réservés © Ludivine Rameaux
+- Le repo contient des dépendances non utilisées dans le code actuel (ex: Mantine, toggle dark mode).
+- Plusieurs pages importent `framer-motion` alors que la dépendance déclarée est `motion`.
+  Si tu as une erreur d'import, soit ajouter `framer-motion`, soit uniformiser les imports.
 
 ## 👤 Contact
 
-- **Portfolio** : [https://ludirportfolio.vercel.app/]
-- **LinkedIn** : [https://www.linkedin.com/in/ludivine-rameaux/]
-- **Instagram** : [https://www.instagram.com/ludi.visuals/]
+- Portfolio : https://ludirportfolio.vercel.app/
+- LinkedIn : https://www.linkedin.com/in/ludivine-rameaux/
+- Instagram : https://www.instagram.com/ludi.visuals/
 
----
+## 📄 License
+
+Projet personnel — Tous droits réservés © Ludivine Rameaux
