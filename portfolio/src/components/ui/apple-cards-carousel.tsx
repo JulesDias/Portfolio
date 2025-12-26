@@ -122,56 +122,54 @@ export const Card = ({
   layout?: boolean;
 }) => {
   return (
-    // On utilise ici le composant Link pour rediriger vers le lien spécifique.
-    <Link href={card.href} legacyBehavior>
-      <a 
-        className="rounded-3xl h-72 w-56 md:h-[28rem] md:w-80 overflow-hidden flex flex-col items-start justify-start relative z-10 border-4 border-white shadow-lg"
-        style={{ backgroundColor: card.color || '#f0f0f0' }}
-      >
-        <div className="relative z-40 p-6 md:p-8">
-          <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-white text-sm md:text-base font-medium font-sans text-left drop-shadow-lg"
-          >
-            {card.category}
-          </motion.p>
-          <motion.p
-            layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-lg md:text-2xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2 drop-shadow-lg"
-          >
-            {card.title}
-          </motion.p>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-3/4 flex items-center justify-center p-4">
-          {card.src === "/pompotes/Barquette-17.png" ? (
-            <div className="border-[8px] border-white rounded-xl inline-block p-2 bg-transparent rotate-6">
-              <BlurImage
-                src={card.src}
-                alt={card.title}
-                width={280}
-                height={280}
-                className="object-contain drop-shadow-2xl"
-              />
-            </div>
-          ) : card.src === "/Capsaï/Stickers9.png" ? (
+    <Link 
+      href={card.href}
+      className="rounded-3xl h-72 w-56 md:h-[28rem] md:w-80 overflow-hidden flex flex-col items-start justify-start relative z-10 border-4 border-white shadow-lg"
+      style={{ backgroundColor: card.color || '#f0f0f0' }}
+    >
+      <div className="relative z-40 p-6 md:p-8">
+        <motion.p
+          layoutId={layout ? `category-${card.category}` : undefined}
+          className="text-white text-sm md:text-base font-medium font-sans text-left drop-shadow-lg"
+        >
+          {card.category}
+        </motion.p>
+        <motion.p
+          layoutId={layout ? `title-${card.title}` : undefined}
+          className="text-white text-lg md:text-2xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2 drop-shadow-lg"
+        >
+          {card.title}
+        </motion.p>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 h-3/4 flex items-center justify-center p-4">
+        {card.src === "/pompotes/Barquette-17.png" ? (
+          <div className="border-[8px] border-white rounded-xl inline-block p-2 bg-transparent rotate-6">
             <BlurImage
               src={card.src}
               alt={card.title}
-              width={200}
-              height={200}
+              width={280}
+              height={280}
               className="object-contain drop-shadow-2xl"
             />
-          ) : (
-            <BlurImage
-              src={card.src}
-              alt={card.title}
-              width={320}
-              height={320}
-              className="w-full h-full object-contain drop-shadow-2xl"
-            />
-          )}
-        </div>
-      </a>
+          </div>
+        ) : card.src === "/Capsaï/Stickers9.png" ? (
+          <BlurImage
+            src={card.src}
+            alt={card.title}
+            width={200}
+            height={200}
+            className="object-contain drop-shadow-2xl"
+          />
+        ) : (
+          <BlurImage
+            src={card.src}
+            alt={card.title}
+            width={320}
+            height={320}
+            className="w-full h-full object-contain drop-shadow-2xl"
+          />
+        )}
+      </div>
     </Link>
   );
 };

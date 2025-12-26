@@ -54,11 +54,19 @@ const data = [
   },
   {
     category: "Workshop",
-    title: "Expérimentation IA",
+    title: "Expérimentation IA - Pokemon ",
     src: "/Workshop/Stickers-06.png",
     href: "/projet/signaletique",
     color: "#65a9c6",
     content: <DummyContent src="/Workshop/Stickers-06.png" />,
+  },
+  {
+    category: "Workshop",
+    title: "Vivant",
+    src: "/Workshop/2.jpg",
+    href: "/projet/signaletique",
+    color: "#B4B25B",
+    content: <DummyContent src="/Workshop/2.jpg" />,
   },
   {
     category: "Clippers",
@@ -83,6 +91,14 @@ const data = [
     href: "/projet/capsai",
     color: "#e49823",
     content: <DummyContent src="/Capsaï/Stickers9.png" />,
+  },
+  {
+    category: "Resurgence",
+    title: "Signalétique",
+    src: "/resurgence/miroir_seine5_5.png",
+    href: "/projet/signaletique",
+    color: "#57a9dfff",
+    content: <DummyContent src="/resurgence/miroir_seine5_5.png" />,
   },
 ];
 
