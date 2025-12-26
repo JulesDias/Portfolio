@@ -31,7 +31,7 @@ const projects = [
   },
   {
     title: "Workshop",
-    slug: "signaletique",
+    slug: "EnConstruction",
     category: "",
     color: "#65a9c6",
     image: "/Workshop/Stickers-06.png",
