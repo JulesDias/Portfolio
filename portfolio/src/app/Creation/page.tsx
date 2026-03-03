@@ -38,7 +38,7 @@ const projects = [
   },
   {
     title: "Création d'Expérience",
-    slug: "sketch",
+    slug: "clipper",
     category: "Clippers",
     color: "#afd274",
     image: "/Clippers/Stickers-04.png",
