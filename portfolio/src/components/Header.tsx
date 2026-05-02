@@ -16,6 +16,8 @@ export default function Header() {
     if (pathname?.startsWith("/projet/Yepoda")) return "text-[#f7c0c5]";
     if (pathname?.startsWith("/projet/GPT")) return "text-[#68a585]";
     if (pathname?.startsWith("/projet/pompotes")) return "text-[#d8a99d]";
+    if (pathname?.startsWith("/projet/pokemon")) return "text-[#65a9c6]";
+    if (pathname?.startsWith("/projet/vivant")) return "text-[#B4B25B]";
     if (pathname?.startsWith("/projet/signaletique")) return "text-[#65a9c6]";
     if (pathname?.startsWith("/projet/clipper")) return "text-[#afd274]";
     if (pathname?.startsWith("/projet/Ececook")) return "text-[#a95156]";

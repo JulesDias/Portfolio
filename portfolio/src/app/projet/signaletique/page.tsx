@@ -9,17 +9,7 @@ export default function ProjetResurgence() {
 
   useEffect(() => {
     setIsClient(true);
-    const hasAlreadyReloaded = sessionStorage.getItem("hasReloaded");
-    if (!hasAlreadyReloaded) {
-      sessionStorage.setItem("hasReloaded", "true");
-      setTimeout(() => {
-        window.location.reload();
-      }, 100);
-    }
     window.scrollTo(0, 0);
-    return () => {
-      sessionStorage.removeItem("hasReloaded");
-    };
   }, []);
 
   if (!isClient) {

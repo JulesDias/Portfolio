@@ -30,11 +30,18 @@ const projects = [
     image: "/pompotes/Barquette-17.png",
   },
   {
-    title: "Workshop",
-    slug: "EnConstruction",
-    category: "",
+    title: "Expérimentation IA - Pokémon",
+    slug: "pokemon",
+    category: "Workshop",
     color: "#65a9c6",
     image: "/Workshop/Stickers-06.png",
+  },
+  {
+    title: "Vivant",
+    slug: "vivant",
+    category: "Workshop",
+    color: "#B4B25B",
+    image: "/Workshop/VIVANT.png",
   },
   {
     title: "Création d'Expérience",
@@ -52,7 +59,7 @@ const projects = [
   },
   {
     title: "BrandBook",
-    slug: "workshop",
+    slug: "capsai",
     category: "Capsaï",
     color: "#e49823",
     image: "/Capsaï/Stickers9.png",

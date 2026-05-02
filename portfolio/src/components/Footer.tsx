@@ -1,4 +1,5 @@
-import { FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -18,17 +19,17 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-2">À propos</h3>
               <ul className="space-y-1">
-                <li><a href="#" className="hover:underline">Portfolio</a></li>
-                <li><a href="#" className="hover:underline">Contact</a></li>
-                <li><a href="#" className="hover:underline">Blog</a></li>
+                <li><Link href="/" className="hover:underline">Portfolio</Link></li>
+                <li><Link href="/footer/contact" className="hover:underline">Contact</Link></li>
+                <li><Link href="/footer/blog" className="hover:underline">Blog</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Ressources</h3>
               <ul className="space-y-1">
-                <li><a href="/Creation" className="hover:underline">Projets</a></li>
-                <li><a href="#" className="hover:underline">Mentions légales</a></li>
-                <li><a href="#" className="hover:underline">CGU</a></li>
+                <li><Link href="/Creation" className="hover:underline">Projets</Link></li>
+                <li><Link href="/footer/mentions-legales" className="hover:underline">Mentions légales</Link></li>
+                <li><Link href="/footer/cgu" className="hover:underline">CGU</Link></li>
               </ul>
             </div>
           </div>
